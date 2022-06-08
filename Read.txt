@@ -1,0 +1,6 @@
+Web yang sejalan dengan proyek ini:
+1. https://reactrouter.com/docs/en/v6/getting-started/overview
+
+2. https://tailwindcss.com/docs/
+
+3. https://ionic.io/ionicons
