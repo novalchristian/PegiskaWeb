@@ -1,14 +1,13 @@
-import React from "react";
+import React from 'react'
 
-const Button = (props) => {
+export default function ButtonAtom({children}) {
   return (
     <button
-      className="bg-blue-500 font-mono text-white py-1.5 px-3.5 text-xs rounded-full md:ml-8 hover:bg-blue-700 
-    duration-500"
-    >
-      {props.children}
-    </button>
-  );
-};
-
-export default Button;
+        href="#_"
+        class="relative rounded-full px-3 py-1.5 overflow-hidden group bg-primary hover:bg-gradient-to-r hover:from-primary hover:to-blue-500 text-white hover:ring-2 hover:ring-offset-2 hover:ring-blue-500 transition-all ease-out duration-300"
+      >
+        <span class="absolute right-0 w-3 h-15 -mt-12 transition-all duration-1000 transform translate-x-12 bg-white opacity-10 rotate-12 group-hover:-translate-x-40 ease"></span>
+        <span class="relative text-xs">{children}</span>
+      </button>
+  )
+}
