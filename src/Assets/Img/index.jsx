@@ -6,6 +6,7 @@ import EkaMajuLogo from './eka-maju-mesinindo.png'
 import MobiusLogo from './mobius-logo.jpg'
 import TristarLogo from './tristar-logo.png'
 import ContohGambar from './contoh-gambar.jpg'
+import ContohSertifikat from './ContohSertifikat.jpeg'
 
 export {
     PegiskaLogo,
@@ -16,4 +17,5 @@ export {
     MobiusLogo,
     TristarLogo,
     ContohGambar,
+    ContohSertifikat,
 }

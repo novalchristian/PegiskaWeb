@@ -1,6 +1,7 @@
 import React from "react";
 import { NavTemplate, HomeHeroTemplate } from "../Components/Templates";
-import {AlfiLogo, KemenkeuLogo} from '../Assets/Img'
+import {ContohSertifikat, KemenkeuLogo, AlfiLogo, EkaMajuLogo, MobiusLogo, TristarLogo, ContohGambar} from '../Assets/Img'
+import { ButtonAtom } from "../Components/Atoms";
 
 function Home() {
   return (
@@ -50,22 +51,176 @@ function Home() {
                   Atas Kepercayaan
                 </h2>
                 <p className="mt-5 font-light text-[#F6F6F6] text-sm md:text-xl">
-                  PT Pegiska Berkat Abadi bisa berjalan atas ijin dan kepercayaan
-                  dari <br /> pihak kepabeanan negara
+                  PT Pegiska Berkat Abadi bisa berjalan atas ijin dan
+                  kepercayaan dari <br /> pihak kepabeanan negara
                 </p>
               </div>
-            <div className="flex flex-wrap">
-              <div className="w-full lg:w-1/2 flex justify-center">
-                <div className="bg-slate-500 rounded-lg md:py-3 md:px-3 shadow-2xl mt-4">
-                  <img src={KemenkeuLogo} alt="KemenkeuLogo"/>
+              <div className="flex flex-wrap">
+                <div className="w-full lg:w-1/2 flex justify-center">
+                  <div className="bg-slate-500 rounded-lg md:py-3 md:px-3 shadow-One mt-4">
+                    <img src={KemenkeuLogo} alt="KemenkeuLogo" />
+                  </div>
                 </div>
-              </div>
-              <div className="w-full lg:w-1/2 flex justify-center">
-                <div className="bg-slate-500 rounded-lg md:py-3 md:px-3 shadow-2xl mt-4">
-                  <img src={AlfiLogo} alt="KemenkeuLogo"/>
+                <div className="w-full lg:w-1/2 flex justify-center">
+                  <div className="bg-slate-500 rounded-lg md:py-3 md:px-3 shadow-One mt-4">
+                    <img src={AlfiLogo} alt="KemenkeuLogo" />
+                  </div>
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Sertifikasi Usaha */}
+      <div className="md:pt-28 pt-16 pb-32 flex justify-center bg-gray-50">
+        <div className="container">
+          <div className="w-full px-4">
+            <div className="mb-[-3rem] md:mb-[-3rem] mx-auto text-center max-w-5xl">
+              <h4 className="mb-2 text-lg font-bold text-primary uppercase">
+                Sertification
+              </h4>
+              <h2 className="mb-4 text-3xl font-bold text-dark md:text-[2.5rem]">
+                Sertifikat Usaha
+              </h2>
+              <div className="flex flex-wrap items-center justify-center pt-8 max-w-[62rem]">
+                <div className="w-full lg:w-1/2">
+                  <h2 className="text-left md:text-[1.7rem]">
+                    <span className="font-bold">PT Pegiska Berkat Abadi</span>{" "}
+                    <br />
+                    memiliki beberapa <br />
+                    sertifikasi untuk <br />
+                    menunjang usaha <br />
+                    di bidang kepabeanan
+                  </h2>
+                </div>
+                <div className="lg:w-1/2 flex justify-end items-center">
+                  <div className="mt-4 bg-teal-100 md:w-4/6 border-2 border-black shadow-Two shadow-slate-400">
+                    <img
+                      src={ContohSertifikat}
+                      alt="Sertifikat Pegiska Berkat Abadi"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Exprience Work */}
+      <div className="md:pt-12 pt-16 pb-10 flex justify-center">
+        <div className="container">
+          <div className="w-full px-4">
+            <div className="mx-auto mb-16 text-center max-w-4xl ">
+              <div className="pb-10">
+                <p className="mt-10 text-dark text-lg md:text-2xl font-medium">
+                  Dengan pengalaman lebih dari 25 tahun, <br />
+                  kami telah mendapatkan banyak customer dan importir <br />
+                  dari berbagai daerah.
+                </p>
+              </div>
+              <div className="flex flex-wrap items-center">
+                <div className="w-full lg:w-1/3 flex justify-center">
+                  <div className="md:py-3 md:px-3 mt-4">
+                    <img src={EkaMajuLogo} alt="KemenkeuLogo" />
+                  </div>
+                </div>
+                <div className="w-full lg:w-1/3 flex justify-center">
+                  <div className=" md:py-3 md:px-3 mt-4">
+                    <img src={MobiusLogo} alt="KemenkeuLogo" />
+                  </div>
+                </div>
+                <div className="w-full lg:w-1/3 flex justify-center">
+                  <div className="md:py-3 md:px-3 mt-4">
+                    <img src={TristarLogo} alt="KemenkeuLogo" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Blog */}
+      <div className="md:pt-12 pt-16 pb-10 flex justify-center">
+        <div className="container">
+          <div className="w-full px-4">
+            <div className="mx-auto mb-16 text-center max-w-7xl">
+              <div className="pb-10">
+                <h4 className="mb-2 text-lg font-bold text-primary uppercase">
+                  Blog
+                </h4>
+                <h2 className="mb-4 text-3xl font-bold text-dark md:text-[2.5rem]">
+                  Informasi Tentang Kepabeanan
+                </h2>
+                <p className="mt-5 font-light text-secondary text-sm md:text-xl">
+                  Dibawah ini terdapat informasi seputar kepabeanan <br /> yang
+                  perlu kamu ketahui.
+                </p>
+              </div>
+
+              <div className="flex flex-wrap">
+                <div className="w-full px-4 md:1/3">
+                  <div className="mb-10 overflow-hidden rounded-3xl bg-white shadow-lg">
+                    <img
+                      src={ContohGambar}
+                      alt="KemenkeuLogo"
+                      className="w-full"
+                    />
+                    <div className="py-8 px-6">
+                      <h4 className="font-bold mb-4">Penjaluran Bea Cukai</h4>
+                      <p className="mb-10">
+                        Jalur Merah, Kuning, dan Hijau yang terdapat di Bea
+                        Cukai...
+                      </p>
+                      <div className="">
+                        <ButtonAtom>Baca selengkapnya</ButtonAtom>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="w-full px-4 md:w-1/3">
+                  <div className="mb-10 overflow-hidden rounded-3xl bg-white shadow-lg">
+                    <img
+                      src={ContohGambar}
+                      alt="KemenkeuLogo"
+                      className="w-full"
+                    />
+                    <div className="py-8 px-6">
+                      <h4 className="font-bold mb-4">Penjaluran Bea Cukai</h4>
+                      <p className="mb-10">
+                        Jalur Merah, Kuning, dan Hijau yang terdapat di Bea
+                        Cukai...
+                      </p>
+                      <div className="">
+                        <ButtonAtom>Baca selengkapnya</ButtonAtom>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="w-full px-4 md:1/3">
+                  <div className="mb-10 overflow-hidden rounded-3xl bg-white shadow-lg">
+                    <img
+                      src={ContohGambar}
+                      alt="KemenkeuLogo"
+                      className="w-full"
+                    />
+                    <div className="py-8 px-6">
+                      <h4 className="font-bold mb-4">Penjaluran Bea Cukai</h4>
+                      <p className="mb-10">
+                        Jalur Merah, Kuning, dan Hijau yang terdapat di Bea
+                        Cukai...
+                      </p>
+                      <div className="">
+                        <ButtonAtom>Baca selengkapnya</ButtonAtom>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
