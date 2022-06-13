@@ -8,12 +8,12 @@ const Nav = () => {
     { name: "Beranda", link: "/" },
     { name: "Penawaran", link: "/penawaran" },
     { name: "Blog", link: "/blog" },
-    { name: "Tentang Kami", link: "/about" },
+    { name: "Tentang Kami", link: "/AboutUs" },
   ];
   let [open, setOpen] = useState(false);
   return (
     <div className="shadow-md w-full fixed top-0 left-0 z-10">
-      <div className="md:flex items-center justify-between bg-white py-3 md:px-20 px-7">
+      <div className="md:flex items-center justify-between bg-white py-3 md:px-20 px-7 ">
         <div
           className="font-bold text-2xl cursor-pointer flex items-center font-sans 
         text-gray-800"

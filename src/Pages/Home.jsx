@@ -1,7 +1,8 @@
 import React from "react";
 import { NavTemplate, HomeHeroTemplate } from "../Components/Templates";
-import {ContohSertifikat, KemenkeuLogo, AlfiLogo, EkaMajuLogo, MobiusLogo, TristarLogo, ContohGambar} from '../Assets/Img'
+import {ContohSertifikat, KemenkeuLogo, AlfiLogo, EkaMajuLogo, MobiusLogo, TristarLogo, ContohGambar, PegiskaLogoWhite} from '../Assets/Img'
 import { ButtonAtom } from "../Components/Atoms";
+import {Link} from 'react-router-dom';
 
 function Home() {
   return (
@@ -250,6 +251,47 @@ function Home() {
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Footer */}
+      <div className="bg-dark pt-12 pb-10 flex justify-center">
+        <div className="container max-w-6xl ">
+          <div className="flex flex-wrap w-full justify-center ">
+            <div className="lg:w-1/2 pl-4 md:pl-0">
+              <div className="w-2/3">
+                <img src={PegiskaLogoWhite} alt="Logo Pegiska Putih" />
+              </div>
+              <p className=" text-white pl-4 pt-8 font-light">
+                Jl. Swasembada Barat XXIII No 41A, RW 14, Kb, Bawang,
+                <br /> Kec, Tj Priok, Kota Jat Utara, Daerah Khusus Ibukota{" "}
+                <br /> Jakarta 14320.
+              </p>
+            </div>
+            <div className="w-full lg:w-1/2 flex justify-start flex-col md:pl-16 pl-8 pt-16 md:pt-6">
+              <h4 className="text-white font-bold">Tautan</h4>
+              <div className="pt-4 flex flex-col ">
+                <Link to="/" className="text-white mb-3">
+                  Beranda
+                </Link>
+                <Link to="/penawaran" className="text-white mb-3">
+                  Penawaran
+                </Link>
+                <Link to="/blog" className="text-white mb-3">
+                  Pengajuan
+                </Link>
+                <Link to="/about" className="text-white mb-3">
+                  Blog
+                </Link>
+                <Link to="/login" className="text-white mb-3">
+                  Tentang Kami
+                </Link>
+              </div>
+            </div>
+            <h4 className="text-white md:pl-4 pl-8 pt-16 font-medium text-left w-full">
+              copyright © 2022 PT Pegiska Berkat Abadi
+            </h4>
           </div>
         </div>
       </div>
