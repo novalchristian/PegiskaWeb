@@ -8,7 +8,7 @@ const Nav = () => {
     { name: "Beranda", link: "/" },
     { name: "Penawaran", link: "/penawaran" },
     { name: "Blog", link: "/blog" },
-    { name: "Tentang Kami", link: "/AboutUs" },
+    { name: "Tentang Kami", link: "/about" },
   ];
   let [open, setOpen] = useState(false);
   return (

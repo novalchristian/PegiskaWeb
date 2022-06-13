@@ -15,6 +15,9 @@ module.exports = {
       "7xl": "5rem",
     },
     extend: {
+      borderRadius:{
+        default: '18px',
+      },
       boxShadow: {
         "One": "-10px 16px 8px 0px rgba(0, 0, 0, 0.24)",
         "Two": "-15px 16px 4px 0px rgba(0, 0, 0, 0.24)",

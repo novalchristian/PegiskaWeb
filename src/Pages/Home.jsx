@@ -84,18 +84,18 @@ function Home() {
                 Sertifikat Usaha
               </h2>
               <div className="flex flex-wrap items-center justify-center pt-8 max-w-[62rem]">
-                <div className="w-full lg:w-1/2">
-                  <h2 className="text-left md:text-[1.7rem]">
-                    <span className="font-bold">PT Pegiska Berkat Abadi</span>{" "}
-                    <br />
-                    memiliki beberapa <br />
-                    sertifikasi untuk <br />
-                    menunjang usaha <br />
+                <div className="w-full lg:w-1/2 mx-10 md:mx-0">
+                  <h2 className="text-center md:text-left md:text-[1.7rem]">
+                    <span className="font-bold">PT Pegiska Berkat Abadi </span>
+                    <br className="hidden md:inline-flex" />
+                    memiliki beberapa <br className="hidden md:inline-flex" />
+                    sertifikasi untuk <br className="hidden md:inline-flex" />
+                    menunjang usaha <br className="hidden md:inline-flex" />
                     di bidang kepabeanan
                   </h2>
                 </div>
-                <div className="lg:w-1/2 flex justify-end items-center">
-                  <div className="mt-4 bg-teal-100 md:w-4/6 border-2 border-black shadow-Two shadow-slate-400">
+                <div className="lg:w-1/2 flex justify-center md:justify-end items-center">
+                  <div className="mt-10 md:mt-4 bg-teal-100 w-3/4 md:w-4/6 border-2 border-black shadow-Two shadow-slate-400">
                     <img
                       src={ContohSertifikat}
                       alt="Sertifikat Pegiska Berkat Abadi"
@@ -116,24 +116,37 @@ function Home() {
               <div className="pb-10">
                 <p className="mt-10 text-dark text-lg md:text-2xl font-medium">
                   Dengan pengalaman lebih dari 25 tahun, <br />
-                  kami telah mendapatkan banyak customer dan importir <br />
+                  kami telah mendapatkan banyak customer dan importir{" "}
+                  <br className="hidden md:inline-flex" />
                   dari berbagai daerah.
                 </p>
               </div>
               <div className="flex flex-wrap items-center">
                 <div className="w-full lg:w-1/3 flex justify-center">
-                  <div className="md:py-3 md:px-3 mt-4">
-                    <img src={EkaMajuLogo} alt="KemenkeuLogo" />
+                  <div className="md:py-3 md:px-3 mt-2 md:mt-4 flex justify-center md:static">
+                    <img
+                      src={EkaMajuLogo}
+                      alt="KemenkeuLogo"
+                      className="w-3/4 md:w-full"
+                    />
                   </div>
                 </div>
-                <div className="w-full lg:w-1/3 flex justify-center">
-                  <div className=" md:py-3 md:px-3 mt-4">
-                    <img src={MobiusLogo} alt="KemenkeuLogo" />
+                <div className="w-full lg:w-1/3 flex justify-center mt-6 md:mt-0 ">
+                  <div className=" md:py-3 md:px-3 mt-4 flex justify-center md:static">
+                    <img
+                      src={MobiusLogo}
+                      alt="KemenkeuLogo"
+                      className="w-3/4 md:w-full"
+                    />
                   </div>
                 </div>
-                <div className="w-full lg:w-1/3 flex justify-center">
-                  <div className="md:py-3 md:px-3 mt-4">
-                    <img src={TristarLogo} alt="KemenkeuLogo" />
+                <div className="w-full lg:w-1/3 flex justify-center mt-6 md:mt-0 ">
+                  <div className="md:py-3 md:px-3 mt-4 w-1/2 md:w-full flex justify-center md:static">
+                    <img
+                      src={TristarLogo}
+                      alt="KemenkeuLogo"
+                      className="w-3/4"
+                    />
                   </div>
                 </div>
               </div>
@@ -159,64 +172,79 @@ function Home() {
                   perlu kamu ketahui.
                 </p>
               </div>
-
-              <div className="flex flex-wrap">
-                <div className="w-full px-4 md:1/3">
-                  <div className="mb-10 overflow-hidden rounded-3xl bg-white shadow-lg">
+              <div className="flex flex-wrap justify-center items-start">
+                <div className="md:w-full w-[70%] lg:w-1/3 md:py-3 md:px-7">
+                  <div className="mt-2 md:mt-4 flex flex-col md:static text-left border-[#C1C1C1] border rounded-default">
                     <img
                       src={ContohGambar}
-                      alt="KemenkeuLogo"
-                      className="w-full"
+                      alt="Gambar Contoh"
+                      className=" md:w-full"
                     />
-                    <div className="py-8 px-6">
-                      <h4 className="font-bold mb-4">Penjaluran Bea Cukai</h4>
-                      <p className="mb-10">
-                        Jalur Merah, Kuning, dan Hijau yang terdapat di Bea
-                        Cukai...
-                      </p>
-                      <div className="">
-                        <ButtonAtom>Baca selengkapnya</ButtonAtom>
+                    <div className="px-4 py-7 overflow-hidden ">
+                      <h4 className="font-bold text-black text-xl">
+                        Penjaluran Bea Cukai
+                      </h4>
+                      <div className="h-16 overflow-hidden">
+                        <p className="pt-3 text-secondary">
+                          Lorem ipsum dolor sit amet consectetur adipisicing
+                          elit. Nam neque reiciendis impedit unde possimus
+                          blanditiis cupiditate fugiat, ipsa, eligendi rerum
+                          ducimus molestias dolor, atque modi magni voluptas
+                          sint consectetur culpa.
+                        </p>
                       </div>
+                      <div className="mt-6"></div>
+                      <ButtonAtom>Baca Selengkapnya</ButtonAtom>
                     </div>
                   </div>
                 </div>
-
-                <div className="w-full px-4 md:w-1/3">
-                  <div className="mb-10 overflow-hidden rounded-3xl bg-white shadow-lg">
+                <div className="md:w-full w-[70%] lg:w-1/3 md:py-3 md:px-7">
+                  <div className="mt-2 md:mt-4 flex flex-col md:static text-left border-[#C1C1C1] border rounded-default">
                     <img
                       src={ContohGambar}
-                      alt="KemenkeuLogo"
-                      className="w-full"
+                      alt="Gambar Contoh"
+                      className=" md:w-full"
                     />
-                    <div className="py-8 px-6">
-                      <h4 className="font-bold mb-4">Penjaluran Bea Cukai</h4>
-                      <p className="mb-10">
-                        Jalur Merah, Kuning, dan Hijau yang terdapat di Bea
-                        Cukai...
-                      </p>
-                      <div className="">
-                        <ButtonAtom>Baca selengkapnya</ButtonAtom>
+                    <div className="px-4 py-7 overflow-hidden ">
+                      <h4 className="font-bold text-black text-xl">
+                        Penjaluran Bea Cukai
+                      </h4>
+                      <div className="h-16 overflow-hidden">
+                        <p className="pt-3 text-secondary">
+                          Lorem ipsum dolor sit amet consectetur adipisicing
+                          elit. Nam neque reiciendis impedit unde possimus
+                          blanditiis cupiditate fugiat, ipsa, eligendi rerum
+                          ducimus molestias dolor, atque modi magni voluptas
+                          sint consectetur culpa.
+                        </p>
                       </div>
+                      <div className="mt-6"></div>
+                      <ButtonAtom>Baca Selengkapnya</ButtonAtom>
                     </div>
                   </div>
                 </div>
-
-                <div className="w-full px-4 md:1/3">
-                  <div className="mb-10 overflow-hidden rounded-3xl bg-white shadow-lg">
+                <div className="md:w-full w-[70%] lg:w-1/3 md:py-3 md:px-7">
+                  <div className="mt-2 md:mt-4 flex flex-col md:static text-left border-[#C1C1C1] border rounded-default">
                     <img
                       src={ContohGambar}
-                      alt="KemenkeuLogo"
-                      className="w-full"
+                      alt="Gambar Contoh"
+                      className=" md:w-full"
                     />
-                    <div className="py-8 px-6">
-                      <h4 className="font-bold mb-4">Penjaluran Bea Cukai</h4>
-                      <p className="mb-10">
-                        Jalur Merah, Kuning, dan Hijau yang terdapat di Bea
-                        Cukai...
-                      </p>
-                      <div className="">
-                        <ButtonAtom>Baca selengkapnya</ButtonAtom>
+                    <div className="px-4 py-7 overflow-hidden ">
+                      <h4 className="font-bold text-black text-xl">
+                        Penjaluran Bea Cukai
+                      </h4>
+                      <div className="h-16 overflow-hidden">
+                        <p className="pt-3 text-secondary">
+                          Lorem ipsum dolor sit amet consectetur adipisicing
+                          elit. Nam neque reiciendis impedit unde possimus
+                          blanditiis cupiditate fugiat, ipsa, eligendi rerum
+                          ducimus molestias dolor, atque modi magni voluptas
+                          sint consectetur culpa.
+                        </p>
                       </div>
+                      <div className="mt-6"></div>
+                      <ButtonAtom>Baca Selengkapnya</ButtonAtom>
                     </div>
                   </div>
                 </div>
