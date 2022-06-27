@@ -38,55 +38,27 @@ function Penawaran() {
 
               <div className="border-b-2 pb-4">
                 <div className="flex justify-between items-center md:pt-4">
-                  <h4 className="text-black font-bold">
+                  <h4 className="text-black font-bold md:text-base text-xs">
                     Jasa Inklaring{" "}
                     <span className="font-light">(Container 1 -3)</span>
                   </h4>
-                  <p className="font-bold text-[#C1C1C1] text-left max-w-[190px]">
+                  <p className="font-bold text-[#C1C1C1] text-left max-w-[190px] md:text-base text-xs">
                     Rp XXX.XXX/Container{" "}
                     <span className="font-light">(s/d container ke-3)</span>
                   </p>
-                  <p className="font-bold text-[#C1C1C1] max-w-[190px] w-[240px] text-left">
-                    Rp XXX.XXX/Container{" "}
+                  <p className="font-bold text-[#C1C1C1] max-w-[190px] w-[240px] text-left md:text-base text-xs">
+                    Rp XXX.XXX/Cont{" "}
                     <span className="font-light">(s/d container ke-3)</span>
                   </p>
                 </div>
                 <div className="flex justify-between items-center md:pt-4">
-                  <h4 className="text-black font-bold w-[240px] text-left">
+                  <h4 className="text-black font-bold w-[240px] text-left md:text-base text-xs">
                     Container berikutnya
                   </h4>
-                  <p className="font-bold text-[#C1C1C1] text-left max-w-[190px]">
+                  <p className="font-bold text-[#C1C1C1] text-left max-w-[190px] md:text-base text-xs">
                     Rp XXX.XXX/Container
                   </p>
-                  <p className="font-bold text-[#C1C1C1] text-left max-w-[190px]">
-                    Rp XXX.XXX/Container
-                  </p>
-                </div>
-              </div>
-
-              <div className="border-b-2 pb-4">
-                <div className="flex justify-between items-center md:pt-4">
-                  <h4 className="text-black font-bold">
-                    Jasa Inklaring{" "}
-                    <span className="font-light">(Container 1 -3)</span>
-                  </h4>
-                  <p className="font-bold text-[#C1C1C1] text-left max-w-[190px]">
-                    Rp XXX.XXX/Container{" "}
-                    <span className="font-light">(s/d container ke-3)</span>
-                  </p>
-                  <p className="font-bold text-[#C1C1C1] max-w-[190px] w-[240px] text-left">
-                    Rp XXX.XXX/Container{" "}
-                    <span className="font-light">(s/d container ke-3)</span>
-                  </p>
-                </div>
-                <div className="flex justify-between items-center md:pt-4">
-                  <h4 className="text-black font-bold w-[240px] text-left">
-                    Container berikutnya
-                  </h4>
-                  <p className="font-bold text-[#C1C1C1] text-left max-w-[190px]">
-                    Rp XXX.XXX/Container
-                  </p>
-                  <p className="font-bold text-[#C1C1C1] text-left max-w-[190px]">
+                  <p className="font-bold text-[#C1C1C1] text-left max-w-[190px] md:text-base text-xs">
                     Rp XXX.XXX/Container
                   </p>
                 </div>
