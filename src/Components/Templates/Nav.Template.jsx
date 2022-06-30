@@ -19,13 +19,13 @@ const Nav = () => {
         text-gray-800"
         >
           <Link to="/">
-            <img src={PegiskaLogo} alt="Pegiska Logo" className="w-[250px]" />
+            <img src={PegiskaLogo} alt="Pegiska Logo" className="md:w-[250px] w-[200px]" />
           </Link>
         </div>
 
         <div
           onClick={() => setOpen(!open)}
-          className="text-3xl absolute right-8 top-6 cursor-pointer md:hidden "
+          className="text-3xl absolute right-8 top-4 cursor-pointer md:hidden "
         >
           <ion-icon name={open ? "close" : "menu"}></ion-icon>
         </div>
