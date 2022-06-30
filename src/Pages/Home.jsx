@@ -9,7 +9,39 @@ import {
   TristarLogo,
   ContohGambar,
 } from "../Assets/Img";
-import { ButtonAtom } from "../Components/Atoms";
+import { TitleDarkMolecules, TitleLightMolecules } from "../Components/Molecules";
+import { BlogItemsOrganism } from "../Components/Organisms";
+
+const data = [
+  {
+    id: 1,
+    image: ContohGambar,
+    title: "Penjaluran Bea Cukai",
+    subTitle:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam neque reiciendis impedit unde possimus blanditiis cupiditate fugiat, ipsa, eligendi rerum ducimus molestias dolor, atque modi magni voluptas sint consectetur culpa.",
+  },
+  {
+    id: 2,
+    image: ContohGambar,
+    title: "Penjaluran Bea Cukai",
+    subTitle:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam neque reiciendis impedit unde possimus blanditiis cupiditate fugiat, ipsa, eligendi rerum ducimus molestias dolor, atque modi magni voluptas sint consectetur culpa.",
+  },
+  {
+    id: 3,
+    image: ContohGambar,
+    title: "Penjaluran Bea Cukai",
+    subTitle:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam neque reiciendis impedit unde possimus blanditiis cupiditate fugiat, ipsa, eligendi rerum ducimus molestias dolor, atque modi magni voluptas sint consectetur culpa.",
+  },
+  {
+    id: 4,
+    image: ContohGambar,
+    title: "Penjaluran Bea Cukai",
+    subTitle:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam neque reiciendis impedit unde possimus blanditiis cupiditate fugiat, ipsa, eligendi rerum ducimus molestias dolor, atque modi magni voluptas sint consectetur culpa.",
+  },
+];
 
 function Home() {
   return (
@@ -22,12 +54,10 @@ function Home() {
         <div className="container">
           <div className="w-full px-4">
             <div className="mb-[-3rem] md:mb-[-3rem] mx-auto text-center max-w-5xl">
-              <h4 className="mb-2 text-lg font-bold text-primary uppercase">
-                Company Profile
-              </h4>
-              <h2 className="mb-4 text-3xl font-bold text-dark md:text-[2.5rem]">
-                Tentang Perusahaan Kami
-              </h2>
+              <TitleLightMolecules
+                titleEng="Company Profile"
+                titleInd="Tentang Perusahaan Kami"
+              />
               <p className="font-base mt-10 text-secondary text-lg md:text-xl">
                 Kami adalah perusahaan{" "}
                 <span className="font-bold">PT Pegiska Berkat Abadi.</span>{" "}
@@ -47,32 +77,42 @@ function Home() {
       </div>
 
       {/* ATAS KEPERCAYAAN SECTION */}
-      <div className="md:pt-12 pt-16 pb-10 flex justify-center bg-slate-800">
+      <div className="md:pt-12 pt-16 pb-8 flex justify-center bg-slate-800">
         <div className="container">
           <div className="w-full px-4">
-            <div className="mx-auto mb-16 text-center max-w-5xl ">
+            <div className="mx-auto mb-16 text-center max-w-5xl">
               <div className="pb-10">
-                <h4 className="mb-2 text-lg font-bold text-primary uppercase">
-                  Trusted By
-                </h4>
-                <h2 className="mb-4 text-3xl font-bold text-white md:text-[2.5rem]">
-                  Atas Kepercayaan
-                </h2>
-                <p className="mt-5 font-light text-[#F6F6F6] text-sm md:text-xl">
-                  PT Pegiska Berkat Abadi bisa berjalan atas ijin dan
-                  kepercayaan dari <br /> pihak kepabeanan negara
-                </p>
+                <TitleDarkMolecules
+                  titleEng="Trusted By"
+                  titleInd="Atas Kepercayaan"
+                  subTitle="PT Pegiska Berkat Abadi bisa berjalan atas ijin dan
+                  kepercayaan dari pihak kepabeanan negara."
+                />
               </div>
-              <div className="flex flex-wrap">
-                <div className="w-full lg:w-1/2 flex justify-center">
-                  <div className="bg-slate-500 rounded-lg md:py-3 md:px-3 shadow-One mt-4">
-                    <img src={KemenkeuLogo} alt="KemenkeuLogo" />
-                  </div>
+              <div className="flex flex-wrap justify-center">
+                <div className="md:w-full w-3/4  lg:w-1/2 flex justify-center">
+                  <a
+                    className="bg-slate-500 rounded-lg md:py-3 md:px-3 shadow-One mt-4 mb-2 md:mb-0 flex justify-center hover:-translate-y-1 hover:scale-110 duration-300 cursor-pointer"
+                    href="https://www.beacukai.go.id/"
+                  >
+                    <img
+                      src={KemenkeuLogo}
+                      alt="KemenkeuLogo"
+                      className="w-3/4 md:w-full py-2"
+                    />
+                  </a>
                 </div>
-                <div className="w-full lg:w-1/2 flex justify-center">
-                  <div className="bg-slate-500 rounded-lg md:py-3 md:px-3 shadow-One mt-4">
-                    <img src={AlfiLogo} alt="KemenkeuLogo" />
-                  </div>
+                <div className="md:w-full w-3/4  lg:w-1/2 flex justify-center">
+                  <a
+                    className="bg-slate-500 rounded-lg md:py-3 md:px-3 shadow-One mt-4 mb-2 md:mb-0 flex justify-center hover:-translate-y-1 hover:scale-110 duration-300 cursor-pointer"
+                    href="https://www.ilfa.or.id/"
+                  >
+                    <img
+                      src={AlfiLogo}
+                      alt="KemenkeuLogo"
+                      className="w-3/4 md:w-full py-2"
+                    />
+                  </a>
                 </div>
               </div>
             </div>
@@ -85,12 +125,10 @@ function Home() {
         <div className="container">
           <div className="w-full px-4">
             <div className="mb-[-3rem] md:mb-[-3rem] mx-auto text-center max-w-5xl">
-              <h4 className="mb-2 text-lg font-bold text-primary uppercase">
-                Sertification
-              </h4>
-              <h2 className="mb-4 text-3xl font-bold text-dark md:text-[2.5rem]">
-                Sertifikat Usaha
-              </h2>
+              <TitleLightMolecules
+                titleEng="Sertification"
+                titleInd="Sertifikat Usaha"
+              />
               <div className="flex flex-wrap items-center justify-center pt-8 max-w-[62rem]">
                 <div className="w-full lg:w-1/2 mx-10 md:mx-0">
                   <h2 className="text-center md:text-left md:text-[1.7rem]">
@@ -135,7 +173,7 @@ function Home() {
                     <img
                       src={EkaMajuLogo}
                       alt="KemenkeuLogo"
-                      className="w-3/4 md:w-full"
+                      className="w-3/4 md:w-full opacity-50 hover:opacity-100 duration-300"
                     />
                   </div>
                 </div>
@@ -144,7 +182,7 @@ function Home() {
                     <img
                       src={MobiusLogo}
                       alt="KemenkeuLogo"
-                      className="w-3/4 md:w-full"
+                      className="w-3/4 md:w-full opacity-50 hover:opacity-100 duration-300"
                     />
                   </div>
                 </div>
@@ -153,7 +191,7 @@ function Home() {
                     <img
                       src={TristarLogo}
                       alt="KemenkeuLogo"
-                      className="w-3/4"
+                      className="w-3/4 md:w-full opacity-50 hover:opacity-100 duration-300"
                     />
                   </div>
                 </div>
@@ -169,94 +207,14 @@ function Home() {
           <div className="w-full px-4">
             <div className="mx-auto mb-16 text-center max-w-7xl">
               <div className="pb-10">
-                <h4 className="mb-2 text-lg font-bold text-primary uppercase">
-                  Blog
-                </h4>
-                <h2 className="mb-4 text-3xl font-bold text-dark md:text-[2.5rem]">
-                  Informasi Tentang Kepabeanan
-                </h2>
-                <p className="mt-5 font-light text-secondary text-sm md:text-xl">
-                  Dibawah ini terdapat informasi seputar kepabeanan <br /> yang
-                  perlu kamu ketahui.
-                </p>
+                <TitleLightMolecules
+                  titleEng="Blog"
+                  titleInd="Informasi Tentang Kepabeanan"
+                  subTitle="Dibawah ini terdapat informasi seputar kepabeanan yang
+                  perlu kamu ketahui."
+                />
               </div>
-              <div className="flex flex-wrap justify-center items-start">
-                <div className="md:w-full w-[70%] lg:w-1/3 md:py-3 md:px-7">
-                  <div className="mt-2 md:mt-4 flex flex-col md:static text-left border-[#C1C1C1] border rounded-default">
-                    <img
-                      src={ContohGambar}
-                      alt="Gambar Contoh"
-                      className=" md:w-full"
-                    />
-                    <div className="px-4 py-7 overflow-hidden ">
-                      <h4 className="font-bold text-black text-xl">
-                        Penjaluran Bea Cukai
-                      </h4>
-                      <div className="h-16 overflow-hidden">
-                        <p className="pt-3 text-secondary">
-                          Lorem ipsum dolor sit amet consectetur adipisicing
-                          elit. Nam neque reiciendis impedit unde possimus
-                          blanditiis cupiditate fugiat, ipsa, eligendi rerum
-                          ducimus molestias dolor, atque modi magni voluptas
-                          sint consectetur culpa.
-                        </p>
-                      </div>
-                      <div className="mt-6"></div>
-                      <ButtonAtom>Baca Selengkapnya</ButtonAtom>
-                    </div>
-                  </div>
-                </div>
-                <div className="md:w-full w-[70%] lg:w-1/3 md:py-3 md:px-7">
-                  <div className="mt-2 md:mt-4 flex flex-col md:static text-left border-[#C1C1C1] border rounded-default">
-                    <img
-                      src={ContohGambar}
-                      alt="Gambar Contoh"
-                      className=" md:w-full"
-                    />
-                    <div className="px-4 py-7 overflow-hidden ">
-                      <h4 className="font-bold text-black text-xl">
-                        Penjaluran Bea Cukai
-                      </h4>
-                      <div className="h-16 overflow-hidden">
-                        <p className="pt-3 text-secondary">
-                          Lorem ipsum dolor sit amet consectetur adipisicing
-                          elit. Nam neque reiciendis impedit unde possimus
-                          blanditiis cupiditate fugiat, ipsa, eligendi rerum
-                          ducimus molestias dolor, atque modi magni voluptas
-                          sint consectetur culpa.
-                        </p>
-                      </div>
-                      <div className="mt-6"></div>
-                      <ButtonAtom>Baca Selengkapnya</ButtonAtom>
-                    </div>
-                  </div>
-                </div>
-                <div className="md:w-full w-[70%] lg:w-1/3 md:py-3 md:px-7">
-                  <div className="mt-2 md:mt-4 flex flex-col md:static text-left border-[#C1C1C1] border rounded-default">
-                    <img
-                      src={ContohGambar}
-                      alt="Gambar Contoh"
-                      className=" md:w-full"
-                    />
-                    <div className="px-4 py-7 overflow-hidden ">
-                      <h4 className="font-bold text-black text-xl">
-                        Penjaluran Bea Cukai
-                      </h4>
-                      <div className="h-16 overflow-hidden">
-                        <p className="pt-3 text-secondary">
-                          Lorem ipsum dolor sit amet consectetur adipisicing
-                          elit. Nam neque reiciendis impedit unde possimus
-                          blanditiis cupiditate fugiat, ipsa, eligendi rerum
-                          ducimus molestias dolor, atque modi magni voluptas
-                          sint consectetur culpa.
-                        </p>
-                      </div>
-                      <div className="mt-6"></div>
-                      <ButtonAtom>Baca Selengkapnya</ButtonAtom>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <BlogItemsOrganism data={data} />
             </div>
           </div>
         </div>

@@ -1,5 +1,6 @@
 import React from "react";
 import { ButtonAtom } from "../Components/Atoms";
+import { TitleLightMolecules } from "../Components/Molecules";
 import { NavTemplate, PenawaranHeroTemplate, FooterTemplate } from "../Components/Templates";
 
 function Penawaran() {
@@ -19,16 +20,7 @@ function Penawaran() {
           <div className="w-full px-4">
             <div className="mx-auto mb-16 text-center max-w-6xl ">
               <div className="pb-10">
-                <h4 className="mb-2 text-base font-bold text-primary uppercase">
-                  Offer
-                </h4>
-                <h2 className="mb-4 text-2xl font-bold text-black md:text-[2.5rem]">
-                  Penawaran Jasa Perusahaan
-                </h2>
-                <p className="mt-5 font-light text-secondary text-sm md:text-xl underline underline-offset-8 decoration-1">
-                  <span className="text-red-600">Keterangan :</span> Login jika
-                  ingin melihat harga dari setiap jasa !!!
-                </p>
+                <TitleLightMolecules titleEng="Offer" titleInd="Penawaran Jasa Perusahaan" subTitle="Keterangan : Login jika ingin melihat harga dari setiap jasa !!!" />
               </div>
 
               <div className="flex justify-between md:pt-10 md:md:pb-6">
@@ -295,16 +287,12 @@ function Penawaran() {
           <div className="w-full px-4">
             <div className="mx-auto mb-16 text-center md:max-w-3xl">
               <div className="pb-10">
-                <h4 className="mb-2 text-base font-bold text-primary uppercase">
-                  Contact
-                </h4>
-                <h2 className="mb-4 text-2xl font-bold text-dark md:text-[2.5rem]">
-                  Hubungi Kami
-                </h2>
-                <p className="mt-5 font-light text-secondary text-sm md:text-xl text-[14px]">
-                  Jika anda ingin menggunakan jasa kami, hubungi kami dengan
-                  mengisi informasi yang ada dibawah ini.
-                </p>
+                <TitleLightMolecules
+                  titleEng="Contact"
+                  titleInd="Hubungi Kami"
+                  subTitle="Jika anda ingin menggunakan jasa kami, hubungi kami dengan
+                  mengisi informasi yang ada dibawah ini."
+                />
               </div>
               <div className="">
                 <label className="block md:pb-6 pb-4">

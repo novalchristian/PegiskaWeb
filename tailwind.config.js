@@ -21,6 +21,7 @@ module.exports = {
       boxShadow: {
         "One": "-10px 16px 8px 0px rgba(0, 0, 0, 0.24)",
         "Two": "-15px 16px 4px 0px rgba(0, 0, 0, 0.24)",
+        "Three": "-2px 10px 20px 2px rgba(0, 0, 0, 0.15)",
       },
       fontFamily: {
         Montserrat: ["Montserrat", "sans-serif"],

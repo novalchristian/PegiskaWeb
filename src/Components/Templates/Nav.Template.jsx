@@ -10,7 +10,7 @@ const Nav = () => {
     { name: "Blog", link: "/blog" },
     { name: "Tentang Kami", link: "/AboutUs" },
   ];
-  let [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(false);
   return (
     <div className="shadow-md w-full fixed top-0 left-0 z-10">
       <div className="md:flex items-center justify-between bg-white py-3 md:px-20 px-7 ">
