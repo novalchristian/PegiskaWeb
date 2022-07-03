@@ -1,15 +1,9 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { ButtonAtom } from "../Atoms";
 import { PegiskaLogo } from "../../Assets/Img";
+import { ButtonAtom } from "../Atoms";
 
-const Nav = () => {
-  let Links = [
-    { name: "Beranda", link: "/" },
-    { name: "Penawaran", link: "/penawaran" },
-    { name: "Blog", link: "/blog" },
-    { name: "Tentang Kami", link: "/AboutUs" },
-  ];
+function NavTemplate(props) {
   const [open, setOpen] = useState(false);
   return (
     <div className="shadow-md w-full fixed top-0 left-0 z-10">
@@ -19,7 +13,11 @@ const Nav = () => {
         text-gray-800"
         >
           <Link to="/">
-            <img src={PegiskaLogo} alt="Pegiska Logo" className="md:w-[250px] w-[200px]" />
+            <img
+              src={PegiskaLogo}
+              alt="Pegiska Logo"
+              className="md:w-[250px] w-[200px]"
+            />
           </Link>
         </div>
 
@@ -35,7 +33,7 @@ const Nav = () => {
             open ? "top-15 shadow-md md:shadow-none" : "top-[-490px]"
           }`}
         >
-          {Links.map((link) => (
+          {props.links.map((link) => (
             <li key={link.name} className="md:mr-8 text-sm md:my-0 my-5">
               <Link
                 to={link.link}
@@ -52,6 +50,6 @@ const Nav = () => {
       </div>
     </div>
   );
-};
+}
 
-export default Nav;
+export default NavTemplate;

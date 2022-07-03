@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 
 function TitleHeroAtom(props) {
   return (
@@ -8,4 +8,4 @@ function TitleHeroAtom(props) {
   );
 }
 
-export default TitleHeroAtom
+export default TitleHeroAtom;

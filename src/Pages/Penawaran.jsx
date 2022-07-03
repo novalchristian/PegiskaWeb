@@ -1,13 +1,24 @@
 import React from "react";
 import { ButtonAtom } from "../Components/Atoms";
 import { TitleLightMolecules } from "../Components/Molecules";
-import { NavTemplate, PenawaranHeroTemplate, FooterTemplate } from "../Components/Templates";
+import {
+  NavTemplate,
+  PenawaranHeroTemplate,
+  FooterTemplate,
+} from "../Components/Templates";
+
+const links = [
+  { name: "Beranda", link: "/" },
+  { name: "Penawaran", link: "/penawaran" },
+  { name: "Blog", link: "/blog" },
+  { name: "Tentang Kami", link: "/AboutUs" },
+];
 
 function Penawaran() {
   return (
     <>
       {/* Nav Template Start */}
-      <NavTemplate />
+      <NavTemplate links={links} />
       {/* Nav Template End */}
 
       {/* Penawaran Hero Start */}
@@ -20,7 +31,11 @@ function Penawaran() {
           <div className="w-full px-4">
             <div className="mx-auto mb-16 text-center max-w-6xl ">
               <div className="pb-10">
-                <TitleLightMolecules titleEng="Offer" titleInd="Penawaran Jasa Perusahaan" subTitle="Keterangan : Login jika ingin melihat harga dari setiap jasa !!!" />
+                <TitleLightMolecules
+                  titleEng="Offer"
+                  titleInd="Penawaran Jasa Perusahaan"
+                  subTitle="Keterangan : Login jika ingin melihat harga dari setiap jasa !!!"
+                />
               </div>
 
               <div className="flex justify-between md:pt-10 md:md:pb-6">
@@ -350,7 +365,7 @@ function Penawaran() {
       {/* Pengajuan End */}
 
       {/* Footer Template Start */}
-      <FooterTemplate />
+      <FooterTemplate links={links} />
       {/* Footer Template End */}
     </>
   );

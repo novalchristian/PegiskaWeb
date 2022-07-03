@@ -1,7 +1,6 @@
 import React from "react";
 import { PenawaranBackground } from "../../Assets/Illustration";
-import { TitleHeroAtom, ButtonAtom} from '../Atoms';
-
+import { TitleHeroAtom, ButtonAtom } from "../Atoms";
 
 export default function PenawaranHeroTemplate() {
   return (

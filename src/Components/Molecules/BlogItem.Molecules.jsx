@@ -1,6 +1,5 @@
-import React from 'react'
-import { ButtonAtom } from '../Atoms';
-
+import React from "react";
+import { ButtonAtom } from "../Atoms";
 
 function BlogItemMolecules(props) {
   return (
@@ -20,4 +19,4 @@ function BlogItemMolecules(props) {
   );
 }
 
-export default BlogItemMolecules
+export default BlogItemMolecules;

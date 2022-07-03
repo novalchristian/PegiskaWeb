@@ -1,8 +1,8 @@
-import React from 'react'
+import React from "react";
 
 function TitleDarkMolecules(props) {
   return (
-    <div className='flex flex-col justify-center items-center'>
+    <div className="flex flex-col justify-center items-center">
       <h4 className="mb-2 text-base font-bold text-primary uppercase">
         {props.titleEng}
       </h4>
@@ -16,4 +16,4 @@ function TitleDarkMolecules(props) {
   );
 }
 
-export default TitleDarkMolecules
+export default TitleDarkMolecules;

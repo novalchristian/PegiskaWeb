@@ -1,7 +1,6 @@
-import React from 'react'
+import React from "react";
 
 function TitleLightMolecules(props) {
-
   return (
     <div className="flex flex-col items-center">
       <h4 className="mb-2 text-base font-bold text-primary uppercase">
@@ -17,4 +16,4 @@ function TitleLightMolecules(props) {
   );
 }
 
-export default TitleLightMolecules
+export default TitleLightMolecules;

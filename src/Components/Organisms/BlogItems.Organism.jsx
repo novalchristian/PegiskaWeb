@@ -1,5 +1,5 @@
-import React from 'react'
-import { BlogItemMolecules } from '../Molecules';
+import React from "react";
+import { BlogItemMolecules } from "../Molecules";
 
 function BlogItemsOrganism(props) {
   return (
@@ -15,4 +15,6 @@ function BlogItemsOrganism(props) {
   );
 }
 
-export default BlogItemsOrganism
+export default BlogItemsOrganism;
+
+
