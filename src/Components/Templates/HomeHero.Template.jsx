@@ -11,10 +11,9 @@ function HomeHeroTemplate(props) {
         <div className="flex flex-wrap ">
           <div className="pt-8 md:pt-0 ml-5 md:ml-0 w-full self-center px-4 lg:w-2/5 lg:pr-[75px] lg:pl-[100px]">
             <TitleHeroAtom>{props.titleHero}</TitleHeroAtom>
-            <p className="text-base text-secondary pt-3">
-              {props.subTitle}
-            </p>
+            <p className="text-base text-secondary pt-3">{props.subTitle}</p>
             <div className="mt-10">
+              {/* TODO: masukkkan  link ke dalam button atom agar bisa langsung di panggil memakai props*/}
               <Link to="/penawaran">
                 <ButtonAtom>
                   {props.btnTitle} <span className="pl-3">{">"}</span>
