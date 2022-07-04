@@ -1,8 +1,9 @@
 import React from 'react'
+import { LoginCover } from '../Assets/Img'
 
 function Login() {
   return (
-    <div>Login Page</div>
+    <div><img src={LoginCover} alt="" /></div>
   )
 }
 

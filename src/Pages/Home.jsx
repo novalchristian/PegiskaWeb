@@ -72,7 +72,7 @@ const links = [
   { name: "Beranda", link: "/" },
   { name: "Penawaran", link: "/penawaran" },
   { name: "Blog", link: "/blog" },
-  { name: "Tentang Kami", link: "/AboutUs" },
+  { name: "Tentang Kami", link: "/about" },
 ];
 
 const gofData = [

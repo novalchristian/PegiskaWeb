@@ -9,7 +9,7 @@ function App() {
       <Route path="/penawaran" element={<PenawaranPage />} />
       <Route path="/blog" element={<BlogPage />} />
       <Route path="/about" element={<AboutPage />} />
-      <Route path="/login" element={<LoginPage />} />
+      <Route path="/login" exact element={<LoginPage />} />
     </Routes>
   );
 }

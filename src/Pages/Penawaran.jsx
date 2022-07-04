@@ -11,7 +11,7 @@ const links = [
   { name: "Beranda", link: "/" },
   { name: "Penawaran", link: "/penawaran" },
   { name: "Blog", link: "/blog" },
-  { name: "Tentang Kami", link: "/AboutUs" },
+  { name: "Tentang Kami", link: "/about" },
 ];
 
 function Penawaran() {
@@ -19,7 +19,7 @@ function Penawaran() {
     <>
       {/* Nav Template Start */}
       <NavTemplate links={links} />
-      {/* Nav Template End */}
+      {/* Nav Template End */}    
 
       {/* Penawaran Hero Start */}
       <PenawaranHeroTemplate />
