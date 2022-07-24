@@ -3,7 +3,7 @@ import {
   NavTemplate,
   HomeHeroTemplate,
   FooterTemplate,
-  BlogTemplate,
+  BlogHomeTemplate,
   TrustedHomeTemplate,
   SertificationTemplate,
   ExperienceTemplate,
@@ -13,9 +13,12 @@ import {
   EkaMajuLogo,
   MobiusLogo,
   TristarLogo,
-  ContohGambar,
   KemenkeuLogo,
   AlfiLogo,
+  PIB,
+  PenjaluranBeaCukai,
+  DO,
+  Container,
 } from "../Assets/Img";
 import { TitleLightMolecules } from "../Components/Molecules";
 
@@ -40,31 +43,31 @@ const company = [
 const data = [
   {
     id: 1,
-    image: ContohGambar,
-    title: "Penjaluran Bea Cukai",
+    image: PIB,
+    title: "Apa Itu PIB",
     subTitle:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam neque reiciendis impedit unde possimus blanditiis cupiditate fugiat, ipsa, eligendi rerum ducimus molestias dolor, atque modi magni voluptas sint consectetur culpa.",
+      "Pemberitahuan Impor Barang atau PIB adalah dokumen pemberitahuan oleh importir kepada bea cukai atas barang impor, berdasarkan dokumen pelengkap pabean sesuai dengan prinsip self-assessment. ",
   },
   {
     id: 2,
-    image: ContohGambar,
+    image: PenjaluranBeaCukai,
     title: "Penjaluran Bea Cukai",
     subTitle:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam neque reiciendis impedit unde possimus blanditiis cupiditate fugiat, ipsa, eligendi rerum ducimus molestias dolor, atque modi magni voluptas sint consectetur culpa.",
+      "Proses pengawasan yang dilakukan petugas Bea Cukai dalam pelayanan kegiatan impor agar tidak ada pelanggaran yang dilakukan pihak yang tidak bertanggung jawab.",
   },
   {
     id: 3,
-    image: ContohGambar,
-    title: "Penjaluran Bea Cukai",
+    image: DO,
+    title: "Apa Itu DO?",
     subTitle:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam neque reiciendis impedit unde possimus blanditiis cupiditate fugiat, ipsa, eligendi rerum ducimus molestias dolor, atque modi magni voluptas sint consectetur culpa.",
+      "DO merupakan surat bukti penyerahan barang yang dikeluarkan perusahaan pelayaran/angkutan laut atau kuasanya kepada pengirim barang. Sementara, surat penyerahan peti kemas (SP2) merupakan dokumen untuk mengeluarkan peti kemas dari dalam pelabuhan.",
   },
   {
     id: 4,
-    image: ContohGambar,
-    title: "Penjaluran Bea Cukai",
+    image: Container,
+    title: "Jenis-jenis Container",
     subTitle:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam neque reiciendis impedit unde possimus blanditiis cupiditate fugiat, ipsa, eligendi rerum ducimus molestias dolor, atque modi magni voluptas sint consectetur culpa.",
+      "Dalam kegiatan Ekspor impor, container atau peti kemas merupakan hal yang tak bisa terpisahkan. jenis Container sendiri sangat beragam. Keberagaman jenis Container ini untuk memenuhi kebutuhan barang yang membutuhkan penanganan yang berbeda dalam proses pengirimannya.",
   },
 ];
 
@@ -145,12 +148,13 @@ function Home() {
       <ExperienceTemplate company={company} />
 
       {/* Blog */}
-      <BlogTemplate
+      <BlogHomeTemplate
         data={data}
         titleEng="Blog"
         titleInd="Informasi Tentang Kepabeanan"
         subTitle="Dibawah ini terdapat informasi seputar kepabeanan yang perlu kamu ketahui."
       />
+
 
       {/* Footer */}
       <FooterTemplate links={links} />

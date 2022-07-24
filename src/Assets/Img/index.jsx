@@ -8,6 +8,10 @@ import TristarLogo from "./tristar-logo.png";
 import ContohGambar from "./contoh-gambar.jpg";
 import ContohSertifikat from "./ContohSertifikat.jpeg";
 import LoginCover from "./login-cover.png";
+import PenjaluranBeaCukai from "./penjaluran-bea-cukai.jpg";
+import PIB from "./PIB.png";
+import DO from "./DO.jpg";
+import Container from "./container.jpg";
 
 export {
   PegiskaLogo,
@@ -20,4 +24,8 @@ export {
   ContohGambar,
   ContohSertifikat,
   LoginCover,
+  PenjaluranBeaCukai,
+  PIB,
+  DO,
+  Container,
 };

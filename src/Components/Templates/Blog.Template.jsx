@@ -1,13 +1,12 @@
 import React from "react";
-import { TitleLightMolecules } from "../Molecules";
-import { BlogItemsOrganism } from "../Organisms";
+import { BlogItemMolecules, TitleLightMolecules } from "../Molecules";
 
 function BlogTemplate(props) {
   return (
-    <div className="md:pt-12 pt-16 pb-10 flex justify-center">
+    <div className="md:pt-12 pt-8 flex justify-center">
       <div className="container">
         <div className="w-full px-4">
-          <div className="mx-auto mb-16 text-center max-w-7xl">
+          <div className="mx-auto mb-8 md:mb-20 text-center max-w-7xl">
             <div className="pb-10">
               <TitleLightMolecules
                 titleEng={props.titleEng}
@@ -15,7 +14,17 @@ function BlogTemplate(props) {
                 subTitle={props.subTitle}
               />
             </div>
-            <BlogItemsOrganism data={props.data} />
+            <div className="flex justify-start">
+              <div className="flex flex-wrap justify-center items-start md:ml-0">
+                {props.data.map((data) => (
+                  <BlogItemMolecules
+                    image={data.image}
+                    title={data.title}
+                    subTitle={data.subTitle}
+                  />
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </div>
