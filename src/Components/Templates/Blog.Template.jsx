@@ -15,13 +15,14 @@ function BlogTemplate(props) {
               />
             </div>
             <div className="flex justify-start">
-              <div className="flex flex-wrap justify-center items-start md:ml-0">
-                {props.data.map((data) => (
-                  <BlogItemMolecules
-                    image={data.image}
-                    title={data.title}
-                    subTitle={data.subTitle}
-                  />
+              <div className="flex flex-wrap justify-center items-start md:ml-0 cursor-pointer">
+                {props.data.map(list => (
+                    <BlogItemMolecules
+                      id={list.id}
+                      image={list.image}
+                      title={list.title}
+                      subTitle={list.subTitle}
+                    />
                 ))}
               </div>
             </div>

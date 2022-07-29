@@ -1,6 +1,7 @@
 import React from "react";
 import { PenawaranBackground } from "../../Assets/Illustration";
-import { TitleHeroAtom, ButtonAtom } from "../Atoms";
+import { TitleHeroAtom } from "../Atoms";
+import {HashLink as Link} from 'react-router-hash-link';
 
 export default function PenawaranHeroTemplate() {
   return (
@@ -23,7 +24,16 @@ export default function PenawaranHeroTemplate() {
                 baik mengurus semuanya berdasarkan jasa yang diminta.
               </p>
               <div className="mt-16">
-                <ButtonAtom>Pengajuan {">"}</ButtonAtom>
+                <Link to="#pengajuan">
+                  <button
+                    class="relative rounded-full px-3 md:py-1.5 py-[3px] overflow-hidden group bg-primary hover:bg-gradient-to-r hover:from-primary hover:to-blue-500 text-white hover:ring-2 hover:ring-offset-2 hover:ring-blue-500 transition-all ease-out duration-300"
+                  >
+                    <span class="absolute right-0 w-3 h-15 -mt-12 transition-all duration-1000 transform translate-x-12 bg-white opacity-10 rotate-12 group-hover:-translate-x-40 ease"></span>
+                    <span class="relative md:text-xs text-[8px]">
+                      Pengajuan
+                    </span>
+                  </button>
+                </Link>
               </div>
             </div>
           </div>

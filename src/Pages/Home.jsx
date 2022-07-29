@@ -1,8 +1,6 @@
 import React from "react";
 import {
-  NavTemplate,
   HomeHeroTemplate,
-  FooterTemplate,
   BlogHomeTemplate,
   TrustedHomeTemplate,
   SertificationTemplate,
@@ -15,10 +13,6 @@ import {
   TristarLogo,
   KemenkeuLogo,
   AlfiLogo,
-  PIB,
-  PenjaluranBeaCukai,
-  DO,
-  Container,
 } from "../Assets/Img";
 import { TitleLightMolecules } from "../Components/Molecules";
 
@@ -40,44 +34,6 @@ const company = [
   },
 ];
 
-const data = [
-  {
-    id: 1,
-    image: PIB,
-    title: "Apa Itu PIB",
-    subTitle:
-      "Pemberitahuan Impor Barang atau PIB adalah dokumen pemberitahuan oleh importir kepada bea cukai atas barang impor, berdasarkan dokumen pelengkap pabean sesuai dengan prinsip self-assessment. ",
-  },
-  {
-    id: 2,
-    image: PenjaluranBeaCukai,
-    title: "Penjaluran Bea Cukai",
-    subTitle:
-      "Proses pengawasan yang dilakukan petugas Bea Cukai dalam pelayanan kegiatan impor agar tidak ada pelanggaran yang dilakukan pihak yang tidak bertanggung jawab.",
-  },
-  {
-    id: 3,
-    image: DO,
-    title: "Apa Itu DO?",
-    subTitle:
-      "DO merupakan surat bukti penyerahan barang yang dikeluarkan perusahaan pelayaran/angkutan laut atau kuasanya kepada pengirim barang. Sementara, surat penyerahan peti kemas (SP2) merupakan dokumen untuk mengeluarkan peti kemas dari dalam pelabuhan.",
-  },
-  {
-    id: 4,
-    image: Container,
-    title: "Jenis-jenis Container",
-    subTitle:
-      "Dalam kegiatan Ekspor impor, container atau peti kemas merupakan hal yang tak bisa terpisahkan. jenis Container sendiri sangat beragam. Keberagaman jenis Container ini untuk memenuhi kebutuhan barang yang membutuhkan penanganan yang berbeda dalam proses pengirimannya.",
-  },
-];
-
-const links = [
-  { name: "Beranda", link: "/" },
-  { name: "Penawaran", link: "/penawaran" },
-  { name: "Blog", link: "/blog" },
-  { name: "Tentang Kami", link: "/about" },
-];
-
 const gofData = [
   {
     id: 1,
@@ -93,11 +49,9 @@ const gofData = [
   },
 ];
 
-function Home() {
+function Home({ data }) {
   return (
     <>
-      <NavTemplate links={links} />
-
       <HomeHeroTemplate
         titleHero="PPJK"
         subTitle="Dalam Undang-undang No.17 Tahun 2006 tentang Kepabeanan (Indonesia) bahwa PPJK merupakan badan usaha yang melakukan kegiatan pengurusan kewajiban pabean untuk dan atas kuasa Importir atau Eksportir"
@@ -154,10 +108,6 @@ function Home() {
         titleInd="Informasi Tentang Kepabeanan"
         subTitle="Dibawah ini terdapat informasi seputar kepabeanan yang perlu kamu ketahui."
       />
-
-
-      {/* Footer */}
-      <FooterTemplate links={links} />
     </>
   );
 }

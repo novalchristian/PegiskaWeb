@@ -1,26 +1,10 @@
 import React from "react";
-import { ButtonAtom } from "../Components/Atoms";
 import { TitleLightMolecules } from "../Components/Molecules";
-import {
-  NavTemplate,
-  PenawaranHeroTemplate,
-  FooterTemplate,
-} from "../Components/Templates";
-
-const links = [
-  { name: "Beranda", link: "/" },
-  { name: "Penawaran", link: "/penawaran" },
-  { name: "Blog", link: "/blog" },
-  { name: "Tentang Kami", link: "/about" },
-];
+import { PenawaranHeroTemplate, PengajuanTemplate } from "../Components/Templates";
 
 function Penawaran() {
   return (
     <>
-      {/* Nav Template Start */}
-      <NavTemplate links={links} />
-      {/* Nav Template End */}    
-
       {/* Penawaran Hero Start */}
       <PenawaranHeroTemplate />
       {/* Penawaran Hero End */}
@@ -297,76 +281,13 @@ function Penawaran() {
       {/* Main Penawaran End */}
 
       {/* Pengajuan Start*/}
-      <div className="md:pt-12 pt-3 pb-10 flex justify-center">
-        <div className="container">
-          <div className="w-full px-4">
-            <div className="mx-auto mb-16 text-center md:max-w-3xl">
-              <div className="pb-10">
-                <TitleLightMolecules
-                  titleEng="Contact"
-                  titleInd="Hubungi Kami"
-                  subTitle="Jika anda ingin menggunakan jasa kami, hubungi kami dengan
-                  mengisi informasi yang ada dibawah ini."
-                />
-              </div>
-              <div className="">
-                <label className="block md:pb-6 pb-4">
-                  <span className="after:content-['*'] after:ml-0.5 after:text-red-500 block text-sm font-medium text-slate-700 text-left">
-                    Nama Lengkap
-                  </span>
-                  <input
-                    type="text"
-                    name="name"
-                    className="mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-primary focus:ring-primary block w-full rounded-md sm:text-sm focus:ring-1"
-                    placeholder="John Doe"
-                  />
-                </label>
-                <label className="block md:pb-6 pb-4">
-                  <span className="after:content-['*'] after:ml-0.5 after:text-red-500 block text-sm font-medium text-slate-700 text-left">
-                    Email
-                  </span>
-                  <input
-                    type="email"
-                    name="email"
-                    className="mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-primary focus:ring-primary block w-full rounded-md sm:text-sm focus:ring-1"
-                    placeholder="you@example.com"
-                  />
-                </label>
-                <label className="block md:pb-6 pb-4">
-                  <span className="after:content-['*'] after:ml-0.5 after:text-red-500 block text-sm font-medium text-slate-700 text-left">
-                    Perusahaan asal
-                  </span>
-                  <input
-                    type="text"
-                    name="perusahaan"
-                    className="mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-primary focus:ring-primary block w-full rounded-md sm:text-sm focus:ring-1"
-                    placeholder="PT Contoh Sejahtera"
-                  />
-                </label>
-                <label className="block md:pb-6 pb-4">
-                  <span className="after:content-['*'] after:ml-0.5 after:text-red-500 block text-sm font-medium text-slate-700 text-left">
-                    No Whatsapp
-                  </span>
-                  <input
-                    type="text"
-                    name="whatsapp"
-                    className="mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-primary focus:ring-primary block w-full rounded-md sm:text-sm focus:ring-1"
-                    placeholder="08xx xxxx xxxx"
-                  />
-                </label>
-                <div className="flex flex-col mt-4">
-                  <ButtonAtom>Kirim</ButtonAtom>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      {/* Pengajuan End */}
+      <PengajuanTemplate
+        titleEng="Contact"
+        titleInd="Hubungi Kami"
+        subTitle="Jika anda ingin menggunakan jasa kami, hubungi kami dengan mengisi informasi yang ada dibawah ini."
+      />
 
-      {/* Footer Template Start */}
-      <FooterTemplate links={links} />
-      {/* Footer Template End */}
+      {/* Pengajuan End */}
     </>
   );
 }

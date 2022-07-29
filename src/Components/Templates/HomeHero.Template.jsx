@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import { ButtonAtom } from "../Atoms";
 import { HomeBackground } from "../../Assets/Illustration";
 import TitleHeroAtom from "../Atoms/TitleHero.Atom";
@@ -13,12 +12,7 @@ function HomeHeroTemplate(props) {
             <TitleHeroAtom>{props.titleHero}</TitleHeroAtom>
             <p className="text-base text-secondary pt-3">{props.subTitle}</p>
             <div className="mt-10">
-              {/* TODO: masukkkan  link ke dalam button atom agar bisa langsung di panggil memakai props*/}
-              <Link to="/penawaran">
-                <ButtonAtom>
-                  {props.btnTitle} <span className="pl-3">{">"}</span>
-                </ButtonAtom>
-              </Link>
+              <ButtonAtom title="Ke Penawaran" to={"/penawaran"} />
             </div>
           </div>
           <div className="w-full self-end lg:w-3/5">

@@ -3,6 +3,13 @@ import { Link } from "react-router-dom";
 import { PegiskaLogo } from "../../Assets/Img";
 import { ButtonAtom } from "../Atoms";
 
+const links = [
+  { name: "Beranda", link: "/" },
+  { name: "Penawaran", link: "/penawaran" },
+  { name: "Blog", link: "/blog" },
+  { name: "Tentang Kami", link: "/about" },
+];
+
 function NavTemplate(props) {
   const [open, setOpen] = useState(false);
   return (
@@ -33,7 +40,7 @@ function NavTemplate(props) {
             open ? "top-15 shadow-md md:shadow-none" : "top-[-490px]"
           }`}
         >
-          {props.links.map((link) => (
+          {links.map((link) => (
             <li key={link.name} className="md:mr-8 text-sm md:my-0 my-5">
               <Link
                 to={link.link}
@@ -43,9 +50,7 @@ function NavTemplate(props) {
               </Link>
             </li>
           ))}
-          <Link to="login">
-            <ButtonAtom>Login | Sign Up</ButtonAtom>
-          </Link>
+            <ButtonAtom title="Login | Sign Up" to={"/login"} />
         </ul>
       </div>
     </div>

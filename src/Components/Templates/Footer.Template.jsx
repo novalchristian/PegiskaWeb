@@ -2,6 +2,13 @@ import React from "react";
 import { PegiskaLogoWhite } from "../../Assets/Img";
 import { Link } from "react-router-dom";
 
+const links = [
+  { name: "Beranda", link: "/" },
+  { name: "Penawaran", link: "/penawaran" },
+  { name: "Blog", link: "/blog" },
+  { name: "Tentang Kami", link: "/about" },
+];
+
 function FooterTemplate(props) {
   return (
     <div className="bg-dark pt-12 pb-10 flex justify-center">
@@ -20,7 +27,7 @@ function FooterTemplate(props) {
           <div className="w-full lg:w-1/2 flex justify-start flex-col md:pl-16 pl-6 pt-16 md:pt-6">
             <h4 className="text-white font-bold">Tautan</h4>
             <div className="pt-4 flex flex-col">
-              {props.links.map((link) => (
+              {links.map((link) => (
                 <Link
                   to={link.link}
                   className="text-white mb-3 hover:text-gray-400 duration-300"
