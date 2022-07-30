@@ -2,8 +2,9 @@ import React from "react";
 import { Routes, Route } from "react-router-dom";
 import {
   Container,
-  ContohGambar,
   DO,
+  Ekspor,
+  Import,
   PenjaluranBeaCukai,
   PIB,
 } from "./Assets/Img";
@@ -14,6 +15,7 @@ import {
   AboutPage,
   LoginPage,
   BlogDetailPage,
+  SignUpPage,
 } from "./Pages";
 import NavbarLayout from "./Layout/NavbarLayout";
 
@@ -42,29 +44,30 @@ function App() {
     },
     {
       id: 4,
+      image: Import,
+      title: "Apa itu Impor",
+      subTitle:
+        "Secara sederhana pengertian impor adalah kegiatan memasukkan barang dari luar daerah Indonesia atau dikenal juga dengan sebutan daerah pabean ke dalam daerah Indonesia atau dalam daerah pabean. Contohnya, sebuah perusahaan melakukan kegiatan impor atau mengimpor barang dari luar daerah pabean (Cina, Thailand, Malaysia, Singapura, Amerika, dan lain-lain) ke Indonesia (kawasan pabean). Jadi, kesimpulan Impor adalah setiap barang yang dimasukkan dari luar Negara Indonesia, baik secara legal maupun ilegal disebut juga barang impor.",
+    },
+    {
+      id: 5,
       image: Container,
       title: "Jenis-jenis Container",
       subTitle:
         "Dalam kegiatan Ekspor impor, container atau peti kemas merupakan hal yang tak bisa terpisahkan. jenis Container sendiri sangat beragam. Keberagaman jenis Container ini untuk memenuhi kebutuhan barang yang membutuhkan penanganan yang berbeda dalam proses pengirimannya.",
     },
     {
-      id: 5,
-      image: ContohGambar,
-      title: "Contoh Title",
-      subTitle:
-        "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Optio, vel, modi perferendis alias suscipit recusandae praesentium dicta quos ratione hic labore? Id, error hic quis aspernatur deleniti mollitia quae accusamus!",
-    },
-    {
       id: 6,
-      image: ContohGambar,
-      title: "Contoh Title",
+      image: Ekspor,
+      title: "Apa itu Ekspor",
       subTitle:
-        "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Optio, vel, modi perferendis alias suscipit recusandae praesentium dicta quos ratione hic labore? Id, error hic quis aspernatur deleniti mollitia quae accusamus!",
+        "Kata ekspor dipandang dari sudut bahasa Indonesia adalah perbuatan mengirimkan barang ke luar Indonesia, sedangkan impor, sebaliknya, yaitu memasukkan barang dari luar negeri ke dalam Indonesia. Dipandang dari sudut jual beli perusahaan, perbuatan ekspor impor adalah perikatan yang timbul dari perjanjian jual beli perusahaan yang telah ditutup. Ekspor impor adalah prestasi penjual dalam usahanya untuk menyerahkan barang kepada pembeli di seberang lautan. Ekspor dilakukan oleh penjual di Indonesia, sedangkan impor dilakukan oleh penjual di luar negeri. Jadi, ekspor impor adalah perbuatan penyerahan oleh penjual kepada pembeli. Ini merupakan unsur pertama dari suatu pelaksanaan perjanjian jual beli perusahaan. Sementara itu, unsur kedua adalah pembayaran. Unsur kedua ini pada umumnya dilakukan dengan mempergunakan devisa, yaitu alat pembayaran luar negeri.!",
     },
   ];
   return (
     <Routes>
       <Route path="/login" exact element={<LoginPage />} />
+      <Route path="/SignUp" exact element={<SignUpPage />} />
       <Route element={<NavbarLayout />}>
         <Route
           element={<BlogDetailPage data={data} />}

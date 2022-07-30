@@ -21,7 +21,7 @@ function BlogDetail({ data }) {
                       className="w-[600px] h-[300px] drop-shadow-xl rounded-xl"
                     />
                   </div>
-                  <p className="pt-6 md:pl-6 indent-10 text-justify first-letter:text-4xl break-words">
+                  <p className="pt-6 md:pl-6 indent-10 text-justify first-letter:text-4xl break-words leading-8">
                     {list.subTitle}
                   </p>
                 </div>

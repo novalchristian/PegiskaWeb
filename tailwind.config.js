@@ -15,13 +15,13 @@ module.exports = {
       "7xl": "5rem",
     },
     extend: {
-      borderRadius:{
-        default: '18px',
+      borderRadius: {
+        default: "18px",
       },
       boxShadow: {
-        "One": "-10px 16px 8px 0px rgba(0, 0, 0, 0.24)",
-        "Two": "-15px 16px 4px 0px rgba(0, 0, 0, 0.24)",
-        "Three": "-2px 10px 20px 2px rgba(0, 0, 0, 0.15)",
+        One: "-10px 16px 8px 0px rgba(0, 0, 0, 0.24)",
+        Two: "-15px 16px 4px 0px rgba(0, 0, 0, 0.24)",
+        Three: "-2px 10px 20px 2px rgba(0, 0, 0, 0.15)",
       },
       fontFamily: {
         Montserrat: ["Montserrat", "sans-serif"],
@@ -30,6 +30,10 @@ module.exports = {
         primary: "#0257E5",
         secondary: "#475569",
         dark: "#0F172A",
+        grayText:"#B9B9B9"
+      },
+      backgroundImage: {
+        "login-cover": "url('/src/Assets/Img/login-cover.png')",
       },
     },
   },

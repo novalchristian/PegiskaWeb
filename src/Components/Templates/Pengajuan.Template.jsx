@@ -1,11 +1,11 @@
-import React, {useState} from 'react'
-import { QuestionModal } from '.';
-import { ButtonActiveMolecules, ButtonDisableMolecules } from '../Molecules';
-import { PengajuanHeaderOrganism } from '../Organisms';
+import React, { useState } from "react";
+import { QuestionModal } from ".";
+import { ButtonActiveMolecules, ButtonDisableMolecules } from "../Molecules";
+import { PengajuanHeaderOrganism } from "../Organisms";
 
 function PengajuanTemplate(props) {
   const [openModal, setOpenModal] = useState(false);
-  const login = useState(true)
+  const [login] = useState(false);
 
   const input = [
     {
@@ -60,9 +60,15 @@ function PengajuanTemplate(props) {
               ))}
               <div className="flex flex-col mt-4">
                 {login ? (
-                    <ButtonActiveMolecules setOpenModal={setOpenModal} title="Kirim" />
+                  <ButtonActiveMolecules
+                    setOpenModal={setOpenModal}
+                    title="Kirim"
+                  />
                 ) : (
-                    <ButtonDisableMolecules setOpenModal={setOpenModal} title="kirim" />
+                  <ButtonDisableMolecules
+                    setOpenModal={setOpenModal}
+                    title="kirim"
+                  />
                 )}
                 {openModal && (
                   <QuestionModal
@@ -83,5 +89,4 @@ function PengajuanTemplate(props) {
   );
 }
 
-
-export default PengajuanTemplate
+export default PengajuanTemplate;
