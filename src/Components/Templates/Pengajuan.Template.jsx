@@ -5,7 +5,7 @@ import { PengajuanHeaderOrganism } from "../Organisms";
 
 function PengajuanTemplate(props) {
   const [openModal, setOpenModal] = useState(false);
-  const [login] = useState(false);
+  const [login] = useState(true);
 
   const input = [
     {
@@ -78,6 +78,11 @@ function PengajuanTemplate(props) {
                     }
                     buttonOne={"Ya, tentu"}
                     buttonTwo={"Belum hihi"}
+                    trueTitle={
+                      "Terima kasih telah mempercayai kami, kami akan segera menghubungi anda"
+                    }
+                    trueButton={"Sama-sama"}
+                    to={"/"}
                   />
                 )}
               </div>

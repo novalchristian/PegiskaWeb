@@ -1,13 +1,14 @@
-import React, {useEffect} from 'react'
-import {motion} from 'framer-motion'
-
+import React, { useEffect, useState } from "react";
+import { motion } from "framer-motion";
+import { CorrectModals } from ".";
 
 function QuestionModalsTemplate(props) {
+  const [openTrueModal, setOpenTrueModal] = useState(false);
 
-     useEffect(() => {
-       document.body.style.overflow = "hidden";
-       return () => (document.body.style.overflow = "unset");
-     }, []);
+  useEffect(() => {
+    document.body.style.overflow = "hidden";
+    return () => (document.body.style.overflow = "unset");
+  }, []);
 
   return (
     <motion.div
@@ -15,6 +16,9 @@ function QuestionModalsTemplate(props) {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1, transition: { duration: 0.3 } }}
     >
+      {openTrueModal && (
+        <CorrectModals title={props.trueTitle} buttonOne={props.trueButton} to={props.to} />
+      )}
       <motion.div
         className="flex h-screen justify-center items-center"
         initial={{ scale: 0 }}
@@ -69,6 +73,9 @@ function QuestionModalsTemplate(props) {
               data-modal-toggle="defaultModal"
               type="button"
               className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 mr-5 mt-5"
+              onClick={function () {
+                setOpenTrueModal(true);
+              }}
             >
               Ya, tentu
             </button>
@@ -94,4 +101,4 @@ QuestionModalsTemplate.defaultProps = {
   buttonTwo: "45",
 };
 
-export default QuestionModalsTemplate
+export default QuestionModalsTemplate;

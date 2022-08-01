@@ -1,8 +1,10 @@
-import React from "react";
+import React, {useState} from "react";
 import { useNavigate } from "react-router-dom";
 import { PegiskaLogoWhite } from "../Assets/Img";
+import { CorrectModals } from "../Components/Templates";
 
 function SignUp() {
+  const [openModal, setOpenModal] = useState(false);
   const history = useNavigate();
   function toHome(e) {
     e.preventDefault();
@@ -78,11 +80,23 @@ function SignUp() {
           <div className="flex flex-col mt-4">
             <button
               className="relative rounded-full px-3 md:py-1.5 py-[3px] overflow-hidden group bg-primary hover:bg-gradient-to-r hover:from-primary hover:to-blue-500 text-white hover:ring-2 hover:ring-offset-2 hover:ring-blue-500 transition-all ease-out duration-300"
-              onClick={toLogin}
+              onClick={() => {
+                setOpenModal(true);
+              }}
             >
               <span className="absolute right-0 w-3 h-15 -mt-12 transition-all duration-1000 transform translate-x-12 bg-white opacity-10 rotate-12 group-hover:-translate-x-40 ease"></span>
               <span className="relative md:text-[18px] text-md">Login</span>
             </button>
+            {openModal && (
+              <CorrectModals
+                closeModal={setOpenModal}
+                title={
+                  "Selamat kamu berhasil mendaftar, waktunya login ya"
+                }
+                buttonOne={"Okkay deh"}
+                to={"/login"}
+              />
+            )}
             <p className="text-center mt-4 text-grayText">
               Already a user?{" "}
               <button className="hover:underline" onClick={toLogin}>

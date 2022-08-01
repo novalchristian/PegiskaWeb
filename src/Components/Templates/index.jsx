@@ -1,6 +1,5 @@
 import NavTemplate from "./Nav.Template";
 import HomeHeroTemplate from "./HomeHero.Template";
-import PenawaranHeroTemplate from "./PenawaranHero.Template";
 import FooterTemplate from "./Footer.Template";
 import BlogHomeTemplate from "./BlogHome.Template";
 import BlogTemplate from "./Blog.Template";
@@ -10,11 +9,13 @@ import ExperienceTemplate from "./Experience.Template";
 import QuestionModal from './QuestionModals.Template'
 import CorrectModals from "./CorrectModal.Template";
 import PengajuanTemplate from "./Pengajuan.Template";
+import UserLoginPenawaranTemplate from "./UserLoginPenawaran.Template";
+import AdminPenawaranTemplate from "./AdminPenawaran.Template";
+import UserNotLoginPenawaranTemplate from "./UserNotLoginPenawaran.Template";
 
 export {
   NavTemplate,
   HomeHeroTemplate,
-  PenawaranHeroTemplate,
   FooterTemplate,
   BlogHomeTemplate,
   BlogTemplate,
@@ -23,5 +24,8 @@ export {
   ExperienceTemplate,
   QuestionModal,
   CorrectModals,
-  PengajuanTemplate
+  PengajuanTemplate,
+  UserLoginPenawaranTemplate,
+  AdminPenawaranTemplate,
+  UserNotLoginPenawaranTemplate,
 };

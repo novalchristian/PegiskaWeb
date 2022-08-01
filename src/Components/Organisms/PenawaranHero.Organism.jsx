@@ -3,7 +3,7 @@ import { PenawaranBackground } from "../../Assets/Illustration";
 import { TitleHeroAtom } from "../Atoms";
 import {HashLink as Link} from 'react-router-hash-link';
 
-export default function PenawaranHeroTemplate() {
+export default function PenawaranHeroOrganism() {
   return (
     <div className="md:pt-22 pt-28 md:pb-12 flex justify-center ">
       <div className="container flex justify-center">
