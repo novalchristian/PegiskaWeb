@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { motion } from "framer-motion";
-import {useNavigate} from 'react-router-dom'
+import { useNavigate } from "react-router-dom";
 
 function CorrectModalsTemplate(props) {
   const history = useNavigate();
@@ -14,6 +14,10 @@ function CorrectModalsTemplate(props) {
 
     history(props.to);
   }
+
+  // function Reload() {
+  //   window.location.reload(false);
+  // }
 
   return (
     <motion.div
@@ -54,7 +58,7 @@ function CorrectModalsTemplate(props) {
             <button
               data-modal-toggle="defaultModal"
               type="button"
-              className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 mr-5 mt-5"
+              className="text-white bg-[#1e4ed8] hover:bg-[#1e40af] focus:ring-4 focus:outline-none focus:ring-[#93c5fd] font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-5 mt-5"
               onClick={handleSubmit}
             >
               {props.buttonOne}

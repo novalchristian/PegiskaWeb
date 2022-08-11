@@ -15,9 +15,9 @@ function PengajuanHeaderOrganism(props) {
 
 PengajuanHeaderOrganism.defaultProps = {
   titleEng: "Contact",
-  titleInd: "HubungiKami",
+  titleInd: "Hubungi Kami",
   subTitle:
-    "Jika anda ingin menggunakan jasa kami, hubungi kami dengan mengisi informasi yang ada dibawah ini.",
+    "Jika anda ingin menggunakan jasa kami, dimohon untuk mengisi informasi yang ada dibawah ini.",
 };
 
 export default PengajuanHeaderOrganism

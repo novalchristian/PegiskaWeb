@@ -22,6 +22,7 @@ module.exports = {
         One: "-10px 16px 8px 0px rgba(0, 0, 0, 0.24)",
         Two: "-15px 16px 4px 0px rgba(0, 0, 0, 0.24)",
         Three: "-2px 10px 20px 2px rgba(0, 0, 0, 0.15)",
+        Four: "0px 10px 5px 2px rgba(0,0,0,0.32)",
       },
       fontFamily: {
         Montserrat: ["Montserrat", "sans-serif"],
@@ -30,7 +31,8 @@ module.exports = {
         primary: "#0257E5",
         secondary: "#475569",
         dark: "#0F172A",
-        grayText:"#B9B9B9"
+        grayText: "#B9B9B9",
+        blue: "#2C395B",
       },
       backgroundImage: {
         "login-cover": "url('/src/Assets/Img/login-cover.png')",

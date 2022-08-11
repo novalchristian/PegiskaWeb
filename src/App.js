@@ -16,6 +16,7 @@ import {
   LoginPage,
   BlogDetailPage,
   SignUpPage,
+  PengajuanPage,
 } from "./Pages";
 import NavbarLayout from "./Layout/NavbarLayout";
 
@@ -76,6 +77,7 @@ function App() {
         />
         <Route element={<HomePage data={data} />} path="/" exact />
         <Route element={<PenawaranPage />} path="/penawaran" />
+        <Route element={<PengajuanPage />} path="/pengajuan" />
         <Route element={<BlogPage data={data} />} path="/blog" />
         <Route element={<AboutPage />} path="/about" />
       </Route>

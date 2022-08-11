@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 const links = [
   { name: "Beranda", link: "/" },
   { name: "Penawaran", link: "/penawaran" },
+  { name: "Pengajuan", link: "/pengajuan" },
   { name: "Blog", link: "/blog" },
   { name: "Tentang Kami", link: "/about" },
 ];

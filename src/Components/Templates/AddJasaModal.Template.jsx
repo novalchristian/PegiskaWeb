@@ -2,7 +2,34 @@ import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { CorrectModals } from ".";
 
-function QuestionModalsTemplate(props) {
+const TambahJasa = [
+  {
+    title: "Nama Jasa",
+    placeholder: "Masukkan Jasa yang ingin anda tambahkan.",
+    type: "text",
+    name: "namaJasa",
+  },
+  {
+    title: "20 Feet",
+    placeholder: "Masukkan harga untuk ukuran 20 feet ini.",
+    type: "number",
+    name: "firstTwenty",
+  },
+  {
+    title: "40 Feet",
+    placeholder: "Masukkan harga untuk ukuran 40 feet ini.",
+    type: "number",
+    name: "secondFourty",
+  },
+  {
+    title: "LCL",
+    placeholder: "Masukkan harga untuk Less Container Loud ini.",
+    type: "number",
+    name: "lcl",
+  },
+];
+
+export default function AddJasaModal(props) {
   const [openTrueModal, setOpenTrueModal] = useState(false);
 
   useEffect(() => {
@@ -14,17 +41,21 @@ function QuestionModalsTemplate(props) {
     <motion.div
       className="fixed inset-0 z-50 transition duration-75 bg-slate-800 bg-opacity-70"
       initial={{ opacity: 0 }}
-      animate={{ opacity: 1, transition: { duration: 0.3 } }}
+      animate={{ opacity: 1, transition: { duration: 0.5 } }}
     >
       {openTrueModal && (
-        <CorrectModals title={props.trueTitle} buttonOne={props.trueButton} to={props.to} />
+        <CorrectModals
+          title="Data anda berhasil di tambahkan."
+          buttonOne="Baiklah"
+          to="/"
+        />
       )}
       <motion.div
         className="flex h-screen justify-center items-center"
         initial={{ scale: 0 }}
         animate={{ scale: 1 }}
       >
-        <motion.div className=" bg-white drop-shadow-2xl rounded-lg shadow w-[500px] h-[300px] flex justify-center items-center">
+        <motion.div className=" bg-white drop-shadow-2xl rounded-lg shadow w-[600px] h-[550px] p-4 flex justify-center items-center">
           <button
             type="button"
             className="absolute top-3 right-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-800 dark:hover:text-white"
@@ -47,37 +78,36 @@ function QuestionModalsTemplate(props) {
             </svg>
           </button>
 
-          <motion.div class="p-6 text-center">
+          <motion.div class="p-6">
             {/* ICON TENGAH */}
-            <svg
-              aria-hidden="true"
-              class="mx-auto mb-4 w-14 h-14 text-gray-400 dark:text-gray-200"
-              fill="none"
-              stroke="red"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-              ></path>
-            </svg>
             <div className="flex justify-center">
-              <h3 class="mb-5 text-lg font-normal text-gray-700 dark:text-gray-400 w-[400px] px-10">
-                {props.title}
+              <h3 class="mb-5 text-2xl font-bold text-primary w-[400px] px-10">
+                Tambahkan Jasa
               </h3>
             </div>
+            {TambahJasa.map((data) => (
+              <label className="block pb-3 ">
+                <span className="after:content-['*'] after:ml-0.5 after:text-red-500 block text-sm font-medium text-slate-700 text-left mb-2">
+                  {data.title}
+                </span>
+                <input
+                  type={data.type}
+                  name={data.name}
+                  className="mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-primary focus:ring-primary block w-full rounded-md sm:text-sm focus:ring-1 invalid:border-pink-500 invalid:text-pink-600 focus:invalid:border-pink-500 focus:invalid:ring-pink-500 placeholder:text-[14px] "
+                  placeholder={data.placeholder}
+                />
+              </label>
+            ))}
+
             <button
               data-modal-toggle="defaultModal"
               type="button"
-              className="text-white bg-[#1e4ed8] hover:bg-[#1e40af] focus:ring-4 focus:outline-none focus:ring-[#93c5fd] font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-5 mt-5"
+              className="text-white bg-green-500 hover:bg-green-600 focus:ring-4 focus:outline-none focus:ring-[#93c5fd] font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-5 mt-5"
               onClick={() => {
                 setOpenTrueModal(true);
               }}
             >
-              Ya, tentu
+              Submit
             </button>
             <motion.button
               onClick={() => props.closeModal(false)}
@@ -86,7 +116,7 @@ function QuestionModalsTemplate(props) {
               type="button"
               class="text-gray-500 bg-white hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-gray-200 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-500 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-600"
             >
-              Belum hihi
+              Batalkan
             </motion.button>
           </motion.div>
         </motion.div>
@@ -95,10 +125,8 @@ function QuestionModalsTemplate(props) {
   );
 }
 
-QuestionModalsTemplate.defaultProps = {
-  title: "Apakah data mu sudah benar? Periksa kembali data mu !",
-  buttonOne: "deepblue",
-  buttonTwo: "45",
-};
-
-export default QuestionModalsTemplate;
+// AddJasaModal.defaultProps = {
+//   title: "Apakah data mu sudah benar? Periksa kembali data mu !",
+//   buttonOne: "deepblue",
+//   buttonTwo: "45",
+// };

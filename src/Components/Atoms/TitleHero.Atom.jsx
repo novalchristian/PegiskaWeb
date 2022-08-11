@@ -2,7 +2,7 @@ import React from "react";
 
 function TitleHeroAtom(props) {
   return (
-    <h1 className="font-bold md:text-4xl text-dark text-[27px]">
+    <h1 className="font-bold  text-dark text-[27px] md:text-4xl md:w-[400px]">
       {props.children}
     </h1>
   );

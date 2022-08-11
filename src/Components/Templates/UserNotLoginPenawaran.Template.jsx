@@ -1,7 +1,7 @@
-import React from 'react'
-import { TitleLightMolecules } from '../Molecules';
-import { MainPenawaranOrganism, PenawaranHeroOrganism } from '../Organisms';
-import PengajuanTemplate from './Pengajuan.Template';
+import React from "react";
+import { TitleLightMolecules } from "../Molecules";
+import { PenawaranHeroOrganism } from "../Organisms";
+import PengajuanTemplate from "./Pengajuan.Template";
 
 function UserNotLoginPenawaranTemplate(props) {
   return (
@@ -14,7 +14,7 @@ function UserNotLoginPenawaranTemplate(props) {
       <div className="md:pt-0 pt-16 pb-4 flex justify-center">
         <div className="container">
           <div className="w-full px-4">
-            <div className="mx-auto mb-16 text-center max-w-6xl ">
+            <div className="mx-auto text-center max-w-6xl ">
               <div className="pb-10">
                 <TitleLightMolecules
                   titleEng={props.penawaranTitleEng}
@@ -23,97 +23,81 @@ function UserNotLoginPenawaranTemplate(props) {
                 />
               </div>
 
-              <MainPenawaranOrganism
-                jenisContainer="20 feet"
-                jasa1="Jasa Inklaring"
-                jasa2="Jasa Inklaring Container Berikutnya"
-                jasa3="Kelancaran Behandel"
-                jasa4="Kelancaran Behandel Container Berikutnya"
-                jasa5="Biaya Forklift/Buruh/dll"
-                jasa6="Biaya Rekaman PIB"
-                jasa7="Biaya Uitslag (1 s/d 5 Container)"
-                jasa8="Biaya Uitslag (6 s/d 10 Container"
-                jasa9="Biaya Uitslag (11 s/d seterusnya)"
-                jasa10="Biaya Angkutan"
-                jasa11="Biaya Operasional Dokumen"
-                biaya1="750.000"
-                biaya2="400.000"
-                biaya3="650.000"
-                biaya4="400.000"
-                biaya5="650.000"
-                biaya6="250.000"
-                biaya7="350.000"
-                biaya8="500.000"
-                biaya9="750.000"
-                biaya10="1.100.000"
-                biaya11="350.000"
-              />
-              <MainPenawaranOrganism
-                jenisContainer="40 Feet"
-                jasa1="Jasa Inklaring"
-                jasa2="Jasa Inklaring Container Berikutnya"
-                jasa3="Kelancaran Behandel"
-                jasa4="Kelancaran Behandel Container Berikutnya"
-                jasa5="Biaya Forklift/Buruh/dll"
-                jasa6="Biaya Rekaman PIB"
-                jasa7="Biaya Uitslag (1 s/d 5 Container)"
-                jasa8="Biaya Uitslag (6 s/d 10 Container"
-                jasa9="Biaya Uitslag (11 s/d seterusnya)"
-                jasa10="Biaya Angkutan"
-                jasa11="Biaya Operasional Dokumen"
-                biaya1="750.000"
-                biaya2="500.000"
-                biaya3="750.000"
-                biaya4="500.000"
-                biaya5="750.000"
-                biaya6="250.000"
-                biaya7="350.000"
-                biaya8="500.000"
-                biaya9="750.000"
-                biaya10="2.200.000"
-                biaya11="350.000"
-              />
-              <MainPenawaranOrganism
-                jenisContainer="LCL (Less Container Load)"
-                jasa1="Jasa Inklaring"
-                jasa2="Jasa Inklaring Container Berikutnya"
-                jasa3="Kelancaran Behandel"
-                jasa4="Kelancaran Behandel Container Berikutnya"
-                jasa5="Biaya Forklift/Buruh/dll"
-                jasa6="Biaya Rekaman PIB"
-                jasa7="Biaya Uitslag (1 s/d 5 Container)"
-                jasa8="Biaya Uitslag (6 s/d 10 Container"
-                jasa9="Biaya Uitslag (11 s/d seterusnya)"
-                jasa10="Biaya Angkutan"
-                jasa11="Biaya Operasional Dokumen"
-                biaya1="750.000"
-                biaya2="-"
-                biaya3="750.000"
-                biaya4="-"
-                biaya5="750.000"
-                biaya6="250.000"
-                biaya7="750.000"
-                biaya8="-"
-                biaya9="-"
-                biaya10="-"
-                biaya11="350.000"
-              />
+              {props.data.map((data) => (
+                <div className="border-2 pb-4 pt-4 px-4 mb-6 bg-slate-700 rounded-2xl ">
+                  <h4 className="text-yellow-400 font-bold text-left md:text-[22px] text-[14px] border-b-[1px] p-2 mx-2">
+                    {data.key}. {data.namaJasa}{" "}
+                    {data.key === 1 && (
+                      <span className="text-white font-light text-base">
+                        (Container 1 - 3) (biaya per container)
+                      </span>
+                    )}
+                    {data.key === 2 && (
+                      <span className="text-white font-light text-base">
+                        (Container Pertama) (biaya per Container)
+                      </span>
+                    )}
+                    {data.key === 3 && (
+                      <span className="text-white font-light text-base">
+                        (Untuk jalur merah) (biaya per container)
+                      </span>
+                    )}
+                    {data.key === 4 && (
+                      <span className="text-white font-light text-base">
+                        (biaya per PIB)
+                      </span>
+                    )}
+                    {data.key === 5 && (
+                      <span className="text-yellow-400 font-medium">
+                        ( 1 s/d 5 Container ){" "}
+                        <span className="text-white font-light text-base">
+                          (biaya per PIB)
+                        </span>
+                      </span>
+                    )}
+                    {data.key === 6 && (
+                      <span className="text-white font-light text-base">
+                        (Ambil Dokumen, Ambil DO, Masukkan Dokumen ke Bea Cukai,
+                        Dll) (biaya per PIB)
+                      </span>
+                    )}
+                  </h4>
+                  <div className="flex text-white mt-4 justify-between px-10 text-lg">
+                    <h4 className="text-center pl-[16px]">20 Feet</h4>
+                    <h4 className="text-center">40 Feet</h4>
+                    <h4 className="text-center pr-[24px]">LCL</h4>
+                  </div>
+                  <div className="flex text-white mt-4 justify-between px-4 text-xl font-bold">
+                    <h4 className="text-center">Rp {data.firstTwenty}</h4>
+                    <h4 className="text-center pl-6">Rp {data.secondFourty}</h4>
+                    <h4 className="text-center">Rp {data.lcl}</h4>
+                  </div>
+
+                    <div className="mt-4">
+                      <h4 className="text-yellow-400 font-medium text-left md:text-[18px] text-[14px] border-[1px] p-2 rounded-lg mx-2">
+                        Berikutnya
+                      </h4>
+                      <div className="flex text-white mt-4 justify-start px-10 text-lg ">
+                        <h4 className="text-center ml-6 mr-[120px]">20 Feet</h4>
+                        <h4 className="text-center mx-10">40 Feet</h4>
+                      </div>
+                      <div className="flex text-white mt-4 justify-start px-4 text-xl font-bold">
+                        <h4 className="text-center mr-10">
+                          Rp {data.firstTwenty}
+                        </h4>
+                        <h4 className="text-center mx-10">Rp {data.secondFourty}</h4>
+                      </div>
+                    </div>
+                </div>
+              ))}
             </div>
           </div>
         </div>
       </div>
       {/* Main Penawaran End */}
 
-      {/* Pengajuan Start*/}
-      <PengajuanTemplate
-        titleEng={props.pengajuanTitleEng}
-        titleInd={props.pengajuanTitleInd}
-        subTitle={props.pengajuanSubTitle}
-      />
-
-      {/* Pengajuan End */}
     </>
   );
 }
 
-export default UserNotLoginPenawaranTemplate
+export default UserNotLoginPenawaranTemplate;
