@@ -20,7 +20,9 @@ import {
   AdminAddBlog,
 } from "./Pages";
 import NavbarLayout from "./Layout/NavbarLayout";
-import axios, { getUrlBase } from "axios";
+import axios from "axios";
+import { useRecoilState } from "recoil";
+import { urlBase } from "./store";
 
 // const dataBlog = [
 //   {
@@ -68,12 +70,13 @@ import axios, { getUrlBase } from "axios";
 // ];
 
 function App() {
+  const [getUrlBase, setUrlBase] = useRecoilState(urlBase);
   const [dataBlog, setDataBlog] = useState([]);
 
   useEffect(() => {
     async function fetchDataBlog() {
       const request = await axios
-        .get("http://localhost:5000/api/blog")
+        .get(getUrlBase + "blog")
         .then((res) => {
           // console.log(res.data.result)
           setDataBlog(res.data.result);
