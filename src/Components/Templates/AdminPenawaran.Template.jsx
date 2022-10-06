@@ -127,7 +127,7 @@ function AdminPenawaranTemplate(props) {
                         setOpenEditModal(true);
                       }}
                     >
-                      {/* X ICON */}
+                      {/* Edit ICON */}
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         className="h-7 w-7"

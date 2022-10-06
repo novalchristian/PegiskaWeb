@@ -13,16 +13,16 @@ function BlogDetail({ data }) {
             <div className="container">
               <div className="w-full px-4">
                 <div className="mb-[-3rem] md:mb-[-3rem] mx-auto text-center max-w-5xl">
-                  <TitleLightMolecules titleEng="Blog" titleInd={list.title} />
+                  <TitleLightMolecules titleEng="Blog" titleInd={list.judul} />
                   <div className="flex justify-center items-center">
                     <img
-                      src={list.image}
+                      src={list.blog}
                       alt=""
                       className="w-[600px] h-[300px] drop-shadow-xl rounded-xl"
                     />
                   </div>
                   <p className="pt-6 md:pl-6 indent-10 text-justify first-letter:text-4xl break-words leading-8">
-                    {list.subTitle}
+                    {list.isi}
                   </p>
                 </div>
               </div>

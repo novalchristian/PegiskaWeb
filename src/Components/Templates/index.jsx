@@ -15,8 +15,10 @@ import UserLoginPenawaranTemplate from "./UserLoginPenawaran.Template";
 import AdminPengajuanTemplate from "./AdminPengajuan.Template";
 import AddJasaModalTemplate from "./AddJasaModal.Template";
 import EditJasaModalTemplate from "./EditJasaModal.Template";
+import AdminBlogTemplate from "./AdminBlog.Template";
 
 export {
+  AdminBlogTemplate,
   EditJasaModalTemplate,
   AddJasaModalTemplate,
   AdminPengajuanTemplate,

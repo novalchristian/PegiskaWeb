@@ -6,8 +6,12 @@ import LoginPage from "./Login";
 import BlogDetailPage from "./BlogDetail";
 import SignUpPage from "./SignUp";
 import PengajuanPage from "./Pengajuan";
+import AdminEditPengajuanPage from "./AdminEditPengajuan";
+import AdminAddBlog from "./AdminAddBlog";
 
 export {
+  AdminAddBlog,
+  AdminEditPengajuanPage,
   HomePage,
   PenawaranPage,
   BlogPage,

@@ -57,8 +57,8 @@ const DataIsi = [
 function Penawaran() {
   // eslint-disable-next-line no-unused-vars
   const [jasa, setJasa] = useState([])
-  const [isAdmin] = useState(true);
-  const [isLogin] = useState(false);
+  const [isAdmin] = useState(false);
+  const [isLogin] = useState(true);
 
   useEffect(() => {
     getJasa();

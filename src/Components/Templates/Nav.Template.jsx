@@ -13,6 +13,7 @@ const links = [
 
 function NavTemplate(props) {
   const [open, setOpen] = useState(false);
+  const [isUserTrue, setIsUserTrue] = useState(true)
   return (
     <div className="shadow-md w-full fixed top-0 left-0 z-10">
       <div className="md:flex items-center justify-between bg-white py-3 md:px-20 px-7 ">
@@ -51,7 +52,16 @@ function NavTemplate(props) {
               </Link>
             </li>
           ))}
+          {isUserTrue ? (
+            <button
+              class="relative rounded-full px-3 md:py-1.5 py-[3px] overflow-hidden group bg-primary hover:bg-gradient-to-r hover:from-primary hover:to-blue-500 text-white hover:ring-2 hover:ring-offset-2 hover:ring-blue-500 transition-all ease-out duration-300"
+            >
+              <span class="absolute right-0 w-3 h-15 -mt-12 transition-all duration-1000 transform translate-x-12 bg-white opacity-10 rotate-12 group-hover:-translate-x-40 ease"></span>
+              <span class="relative md:text-xs text-[8px]">Halo, Noval Christian</span>
+            </button>
+          ) : (
             <ButtonAtom title="Login | Sign Up" to={"/login"} />
+          )}
         </ul>
       </div>
     </div>
