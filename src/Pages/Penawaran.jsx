@@ -4,70 +4,45 @@ import {
   UserLoginPenawaranTemplate,
   UserNotLoginPenawaranTemplate,
 } from "../Components/Templates";
-import {PenawaranNotLogin} from '../Data/PenawaranNotLogin'
-import axios from 'axios';
-
-const DataIsi = [
-  {
-    key: 1,
-    namaJasa: "Jasa Inklaring",
-    firstTwenty: 750000,
-    secondFourty: 750000,
-    lcl: 750000,
-  },
-  {
-    key: 2,
-    namaJasa: "Kelancaran Behandel",
-    firstTwenty: 650000,
-    secondFourty: 750000,
-    lcl: 500000,
-  },
-  {
-    key: 3,
-    namaJasa: "Biaya Forklift/Buruh/dll",
-    firstTwenty: 650000,
-    secondFourty: 750000,
-    lcl: 500000,
-  },
-  {
-    key: 4,
-    namaJasa: "Biaya Rekaman PIB",
-    firstTwenty: 250000,
-    secondFourty: 250000,
-    lcl: 250000,
-  },
-  {
-    key: 5,
-    namaJasa: "Biaya Uitslag",
-    firstTwenty: 350000,
-    secondFourty: 350000,
-    lcl: 750000,
-  },
-  {
-    key: 6,
-    namaJasa: "Biaya Operasional Dokumen",
-    firstTwenty: 350000,
-    secondFourty: 350000,
-    lcl: 350000,
-  },
-];
-
-
+import { PenawaranNotLogin } from "../Data/PenawaranNotLogin";
+import axios from "axios";
+import { useRecoilState } from "recoil";
+import { urlBase } from "../store";
 
 function Penawaran() {
-  // eslint-disable-next-line no-unused-vars
-  const [jasa, setJasa] = useState([])
-  const [isAdmin] = useState(false);
-  const [isLogin] = useState(true);
+  const [getUrlBase] = useRecoilState(urlBase);
+  const [dataJasa, setDataJasa] = useState([]);
 
   useEffect(() => {
-    getJasa();
-  },[])
+    async function fetchDataBlog() {
+      const request = await axios
+        .get(getUrlBase + "jasa", {
+          headers: {
+            "Content-Type": "application/x-www-form-urlencoded",
+            session: localStorage.getItem("session"),
+          },
+        })
+        .then((res) => {
+          // console.log(res.data.result)
+          setDataJasa(res.data.result);
+        })
+        .catch((er) => console.log("Error: ", er));
+      return request;
+    }
+    fetchDataBlog();
+  }, [getUrlBase]);
 
-  const getJasa = async () => {
-    const response = await axios.get('http://localhost:5000/jasa')
-    setJasa(response.data)
-  }
+  // const [jasa, setJasa] = useState([])
+  const [isAdmin] = useState(false);
+
+  // useEffect(() => {
+  //   getJasa();
+  // },[])
+
+  // const getJasa = async () => {
+  //   const response = await axios.get('http://localhost:5000/jasa')
+  //   setJasa(response.data)
+  // }
 
   return (
     <>
@@ -75,15 +50,15 @@ function Penawaran() {
         <AdminPenawaranTemplate
           penawaranTitleEng="Offer"
           penawaranTitleInd="Penawaran Jasa Perusahaan"
-          data={DataIsi}
+          data={dataJasa}
         />
-      ) : isLogin ? (
+      ) : localStorage.getItem("session") !== null ? (
         <UserLoginPenawaranTemplate
           penawaranTitleEng="Offer"
           penawaranTitleInd="Penawaran Jasa Perusahaan"
           penawaranSubTitle="Berikut merupakan jasa yang kami berikan beserta harga yang telah sesuai dengan kebijakan perusahaan kami."
-          data={DataIsi}
-          login={isLogin}
+          data={dataJasa}
+          // login={isLogin}
         />
       ) : (
         <UserNotLoginPenawaranTemplate
@@ -94,7 +69,7 @@ function Penawaran() {
           pengajuanTitleInd="Hubungi Kami"
           pengajuanSubTitle="Jika anda ingin menggunakan jasa kami, hubungi kami dengan mengisi informasi yang ada dibawah ini."
           data={PenawaranNotLogin}
-          login={isLogin}
+          // login={isLogin}
         />
       )}
     </>

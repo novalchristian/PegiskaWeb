@@ -4,7 +4,7 @@ function ExperienceOrganism(props) {
   return (
     <div className="flex flex-wrap items-center">
       {props.company.slice(0, 3).map((data) => (
-        <div className="w-full lg:w-1/3 flex justify-center mb-8">
+        <div className="w-full lg:w-1/3 flex justify-center mb-8" key={data.id}>
           <div className="md:py-3 md:px-3 mt-2 md:mt-4 flex justify-center md:static">
             <img
               src={data.img}

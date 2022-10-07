@@ -11,10 +11,9 @@ import {
   EkaMajuLogo,
   MobiusLogo,
   TristarLogo,
-  KemenkeuLogo,
-  AlfiLogo,
 } from "../Assets/Img";
 import { TitleLightMolecules } from "../Components/Molecules";
+import { gofData } from "../Data/GofData";
 
 const company = [
   {
@@ -34,20 +33,6 @@ const company = [
   },
 ];
 
-const gofData = [
-  {
-    id: 1,
-    ref: "https://www.beacukai.go.id/",
-    src: KemenkeuLogo,
-    name: "Logo Kemenkeu",
-  },
-  {
-    id: 2,
-    ref: "https://www.ilfa.or.id/",
-    src: AlfiLogo,
-    name: "Logo Alfi Ilfa",
-  },
-];
 
 function Home({ data }) {
   return (

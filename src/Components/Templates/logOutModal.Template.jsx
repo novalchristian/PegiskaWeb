@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { CorrectModals } from ".";
+import { CorrectLogOutModalTemplate } from ".";
 
-function QuestionModalsTemplate(props) {
+function LogOutModalTemplate(props) {
   const [openTrueModal, setOpenTrueModal] = useState(false);
 
   useEffect(() => {
@@ -10,19 +10,17 @@ function QuestionModalsTemplate(props) {
     return () => (document.body.style.overflow = "unset");
   }, []);
 
+  function logOut() {
+    localStorage.clear();
+    setOpenTrueModal(true);
+  }
+
   return (
     <motion.div
       className="fixed inset-0 z-50 transition duration-75 bg-slate-800 bg-opacity-70"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1, transition: { duration: 0.3 } }}
     >
-      {openTrueModal && (
-        <CorrectModals
-          title={props.trueTitle}
-          buttonOne={props.trueButton}
-          to={props.to}
-        />
-      )}
       <motion.div
         className="flex h-screen justify-center items-center"
         initial={{ scale: 0 }}
@@ -77,9 +75,8 @@ function QuestionModalsTemplate(props) {
               data-modal-toggle="defaultModal"
               type="button"
               className="text-white bg-[#1e4ed8] hover:bg-[#1e40af] focus:ring-4 focus:outline-none focus:ring-[#93c5fd] font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-5 mt-5"
-              onClick={() => {
-                setOpenTrueModal(true);
-              }}
+              onClick={logOut}
+              // MASUKKIN DISINI UNTUK BACKENDNYA HAPUS SESSION
             >
               {props.buttonOne}
             </button>
@@ -95,14 +92,20 @@ function QuestionModalsTemplate(props) {
           </motion.div>
         </motion.div>
       </motion.div>
+      {openTrueModal && (
+        <CorrectLogOutModalTemplate
+          title={props.trueTitle}
+          buttonOne={props.trueButton}
+        />
+      )}
     </motion.div>
   );
 }
 
-QuestionModalsTemplate.defaultProps = {
+LogOutModalTemplate.defaultProps = {
   title: "Apakah data mu sudah benar? Periksa kembali data mu !",
   buttonOne: "Ya, tentu",
   buttonTwo: "Belum",
 };
 
-export default QuestionModalsTemplate;
+export default LogOutModalTemplate;

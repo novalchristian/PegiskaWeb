@@ -8,7 +8,10 @@ function BlogItemMolecules(props) {
   const [getUrlBase] = useRecoilState(urlBase);
   // const navigate = useNavigate();
   return (
-    <div className="md:w-full w-[40%] lg:w-1/3 md:py-3 md:px-7 mb-7  hover:-translate-y-1 hover:scale-110 duration-300 w:2/3 mx-2 md:m-0">
+    <div
+      className="md:w-full w-[40%] lg:w-1/3 md:py-3 md:px-7 mb-7  hover:-translate-y-1 hover:scale-110 duration-300 w:2/3 mx-2 md:m-0"
+      key={props.id}
+    >
       <div className="mt-2 md:mt-4 flex flex-col md:static text-left border-[#d3d3d3] border rounded-default shadow-Three">
         <img
           src={getUrlBase + props.image}

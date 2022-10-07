@@ -17,6 +17,7 @@ function BlogHomeTemplate(props) {
             <div className="flex flex-wrap justify-center items-start">
               {props.data.slice(0, 3).map((data) => (
                 <BlogItemMolecules
+                  key={data.id_blog}
                   image={data.blog}
                   title={data.judul}
                   subTitle={data.isi}

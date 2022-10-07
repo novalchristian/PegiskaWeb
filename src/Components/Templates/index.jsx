@@ -16,8 +16,12 @@ import AdminPengajuanTemplate from "./AdminPengajuan.Template";
 import AddJasaModalTemplate from "./AddJasaModal.Template";
 import EditJasaModalTemplate from "./EditJasaModal.Template";
 import AdminBlogTemplate from "./AdminBlog.Template";
+import LogOutModalTemplate from "./logOutModal.Template";
+import CorrectLogOutModalTemplate from "./correctLogOutModal.Template";
 
 export {
+  CorrectLogOutModalTemplate,
+  LogOutModalTemplate,
   AdminBlogTemplate,
   EditJasaModalTemplate,
   AddJasaModalTemplate,

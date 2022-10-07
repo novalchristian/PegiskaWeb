@@ -18,7 +18,7 @@ function BlogTemplate(props) {
               <div className="flex flex-wrap justify-center items-start md:ml-0 cursor-pointer">
                 {props.data.map((list) => (
                   <BlogItemMolecules
-                    id={list.id}
+                    id={list.id_blog}
                     image={list.blog}
                     title={list.judul}
                     subTitle={list.isi}

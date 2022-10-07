@@ -3,11 +3,11 @@ import { PegiskaLogoWhite } from "../../Assets/Img";
 import { Link } from "react-router-dom";
 
 const links = [
-  { name: "Beranda", link: "/" },
-  { name: "Penawaran", link: "/penawaran" },
-  { name: "Pengajuan", link: "/pengajuan" },
-  { name: "Blog", link: "/blog" },
-  { name: "Tentang Kami", link: "/about" },
+  { id: 1, name: "Beranda", link: "/" },
+  { id: 2, name: "Penawaran", link: "/penawaran" },
+  { id: 3, name: "Pengajuan", link: "/pengajuan" },
+  { id: 4, name: "Blog", link: "/blog" },
+  { id: 5, name: "Tentang Kami", link: "/about" },
 ];
 
 function FooterTemplate(props) {
@@ -30,6 +30,7 @@ function FooterTemplate(props) {
             <div className="pt-4 flex flex-col">
               {links.map((link) => (
                 <Link
+                  key={link.id}
                   to={link.link}
                   className="text-white mb-3 hover:text-gray-400 duration-300"
                 >
