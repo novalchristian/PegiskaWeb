@@ -39,15 +39,11 @@ function App() {
       <Route path="/login" exact element={<LoginPage />} />
       <Route path="/SignUp" exact element={<SignUpPage />} />
       <Route element={<NavbarLayout />}>
-        <Route
-          element={<BlogDetailPage data={dataBlog} />}
-          path="/blog/:title"
-        />
-
         <Route element={<HomePage data={dataBlog} />} path="/" exact />
         <Route element={<PenawaranPage />} path="/penawaran" />
         <Route element={<PengajuanPage />} path="/pengajuan" />
         <Route element={<BlogPage data={dataBlog} />} path="/blog" />
+        <Route element={<BlogDetailPage />} path="/detail-blog/:id" />
         <Route element={<AboutPage />} path="/about" />
 
         <Route path="/AddBlog" exact element={<AdminAddBlog />} />

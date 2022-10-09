@@ -19,6 +19,10 @@ function CorrectModalsTemplate(props) {
   //   window.location.reload(false);
   // }
 
+  function replaceWithBr() {
+    return props.title.replace(/\n/g, "<br />");
+  }
+
   return (
     <motion.div
       className="fixed inset-0 z-50 transition duration-75 bg-slate-800 bg-opacity-70"
@@ -51,9 +55,11 @@ function CorrectModalsTemplate(props) {
               />
             </svg>
             <div className="flex justify-center">
-              <h3 class="mb-5 text-lg font-normal text-gray-700 dark:text-gray-400 w-[400px] px-10">
-                {props.title}
-              </h3>
+              <p
+                class="mb-5 text-lg font-normal text-gray-700 dark:text-gray-400 w-[400px] px-10"
+                style={{ lineHeight: "15px" }}
+                dangerouslySetInnerHTML={{ __html: replaceWithBr() }}
+              />
             </div>
             <button
               data-modal-toggle="defaultModal"

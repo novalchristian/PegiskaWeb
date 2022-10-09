@@ -59,6 +59,8 @@ function Login() {
     }
   }
 
+  const data = JSON.parse(localStorage.getItem("dataPengguna"));
+
   const history = useNavigate();
   function toHome(e) {
     e.preventDefault();
@@ -134,9 +136,7 @@ function Login() {
             {openModal && (
               <CorrectModals
                 closeModal={setOpenModal}
-                title={
-                  "Selamat datang Pengguna jasa :) di PT Pegiska Berkat Abadi"
-                }
+                title={`Selamat datang ${data.nama}:) \n\n di PT Pegiska Berkat Abadi`}
                 buttonOne={"Mulai Menjelajah"}
                 to={"/"}
               />
