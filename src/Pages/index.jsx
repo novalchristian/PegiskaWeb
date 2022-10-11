@@ -8,8 +8,10 @@ import SignUpPage from "./SignUp";
 import PengajuanPage from "./Pengajuan";
 import AdminEditPengajuanPage from "./AdminEditPengajuan";
 import AdminAddBlog from "./AdminAddBlog";
+import AdminDetailPengajuan from "./AdminDetailPengajuan";
 
 export {
+  AdminDetailPengajuan,
   AdminAddBlog,
   AdminEditPengajuanPage,
   HomePage,

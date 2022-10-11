@@ -12,6 +12,8 @@ import { urlBase } from "../store";
 function Penawaran() {
   const [getUrlBase] = useRecoilState(urlBase);
   const [dataJasa, setDataJasa] = useState([]);
+  const data = JSON.parse(localStorage.getItem("dataPengguna"));
+  // const [isAdmin] = useState();
 
   useEffect(() => {
     async function fetchDataBlog() {
@@ -32,39 +34,28 @@ function Penawaran() {
     fetchDataBlog();
   }, [getUrlBase]);
 
-  // const [jasa, setJasa] = useState([])
-  const [isAdmin] = useState(false);
-
-  // useEffect(() => {
-  //   getJasa();
-  // },[])
-
-  // const getJasa = async () => {
-  //   const response = await axios.get('http://localhost:5000/jasa')
-  //   setJasa(response.data)
-  // }
-
   return (
     <>
-      {isAdmin ? (
-        <AdminPenawaranTemplate
-          penawaranTitleEng="Offer"
-          penawaranTitleInd="Penawaran Jasa Perusahaan"
-          data={dataJasa}
-        />
-      ) : localStorage.getItem("session") !== null ? (
-        <UserLoginPenawaranTemplate
-          penawaranTitleEng="Offer"
-          penawaranTitleInd="Penawaran Jasa Perusahaan"
-          penawaranSubTitle="Berikut merupakan jasa yang kami berikan beserta harga yang telah sesuai dengan kebijakan perusahaan kami."
-          data={dataJasa}
-          // login={isLogin}
-        />
+      {data !== null ? (
+        data.id_user === 1 ? (
+          <AdminPenawaranTemplate
+            penawaranTitleEng="Offer"
+            penawaranTitleInd="Penawaran Jasa Perusahaan"
+            data={dataJasa}
+          />
+        ) : (
+          <UserLoginPenawaranTemplate
+            penawaranTitleEng="Offer"
+            penawaranTitleInd="Penawaran Jasa Perusahaan"
+            penawaranSubTitle="Berikut merupakan jasa yang kami berikan beserta harga yang telah sesuai dengan kebijakan perusahaan kami."
+            data={dataJasa}
+          />
+        )
       ) : (
         <UserNotLoginPenawaranTemplate
           penawaranTitleEng="Offer"
           penawaranTitleInd="Penawaran Jasa Perusahaan"
-          penawaranSubTitle="Keterangan : Anda harus login terlebih dahulu jika ingin melihat daftar harga!!!"
+          penawaranSubTitle="!!! Anda harus login terlebih dahulu jika ingin melihat daftar harga!!!"
           pengajuanTitleEng="Contact"
           pengajuanTitleInd="Hubungi Kami"
           pengajuanSubTitle="Jika anda ingin menggunakan jasa kami, hubungi kami dengan mengisi informasi yang ada dibawah ini."

@@ -3,7 +3,7 @@ import React from "react";
 function TitleDarkMolecules(props) {
   return (
     <div className="flex flex-col justify-center items-center">
-      <h4 className="mb-2 text-base font-bold text-primary uppercase">
+      <h4 className="mb-2 text-base font-bold text-primary uppercase w-[200px]">
         {props.titleEng}
       </h4>
       <h2 className={"mb-4 text-2xl font-bold text-white md:text-[2.5rem]"}>

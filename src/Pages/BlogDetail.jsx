@@ -9,8 +9,6 @@ function BlogDetail() {
   const { id } = useParams();
   const [getUrlBase] = useRecoilState(urlBase);
   const [dataBlog, setDataBlog] = React.useState([]);
-  // let id = props.id_blog;
-  // const { id_blog } = useParams();
 
   React.useEffect(() => {
     async function fetchDataBlogById() {
@@ -37,10 +35,10 @@ function BlogDetail() {
                 <img
                   src={getUrlBase + dataBlog.blog}
                   alt=""
-                  className="w-[600px] h-[300px] drop-shadow-xl rounded-xl"
+                  className="md:w-[600px] md:h-[300px] w-[300px] drop-shadow-xl rounded-xl"
                 />
               </div>
-              <p className="pt-6 md:pl-6 indent-10 text-justify first-letter:text-4xl break-words leading-8">
+              <p className="pt-6 md:pl-6 indent-10 text-justify first-letter:text-4xl break-words leading-8 md:mx-0 mx-4 text-[14px] md:text-base">
                 {dataBlog.isi}
               </p>
             </div>

@@ -1,25 +1,27 @@
-/* eslint-disable no-unused-vars */
-import React, { useState } from "react";
+import React from "react";
 import {
   AdminPengajuanTemplate,
   PengajuanTemplate,
+  UserNotLoginPengajuan,
 } from "../Components/Templates";
-import { DummyPesanan } from "../Data/DummyPesanan";
 
 function Pengajuan() {
-  const [isUser, setIsUser] = useState(true);
-  const [isAdmin, setIsAdmin] = useState(false);
+  const data = JSON.parse(localStorage.getItem("dataPengguna"));
   return (
     <>
-      {isUser && (
-        <PengajuanTemplate
-          titleEng="Order"
-          titleInd="Buat Pesanan Jasa"
-          subTitle="Jika anda berminat menggunakan jasa kami, silahkan mengisi informasi yang ada dibawah ini."
-          login={true}
-        />
+      {data !== null ? (
+        data.id_user === 1 ? (
+          <AdminPengajuanTemplate />
+        ) : (
+          <PengajuanTemplate
+            titleEng="Order"
+            titleInd="Buat Pesanan Jasa"
+            subTitle="Jika anda berminat menggunakan jasa kami, silahkan mengisi informasi yang ada dibawah ini."
+          />
+        )
+      ) : (
+        <UserNotLoginPengajuan />
       )}
-      {isAdmin && <AdminPengajuanTemplate data={DummyPesanan} />}
     </>
   );
 }

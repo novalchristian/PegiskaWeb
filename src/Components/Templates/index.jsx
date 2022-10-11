@@ -18,8 +18,10 @@ import EditJasaModalTemplate from "./EditJasaModal.Template";
 import AdminBlogTemplate from "./AdminBlog.Template";
 import LogOutModalTemplate from "./logOutModal.Template";
 import CorrectLogOutModalTemplate from "./correctLogOutModal.Template";
+import UserNotLoginPengajuan from "./UserNotLoginPengajuan.Template";
 
 export {
+  UserNotLoginPengajuan,
   CorrectLogOutModalTemplate,
   LogOutModalTemplate,
   AdminBlogTemplate,

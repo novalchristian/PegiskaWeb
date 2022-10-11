@@ -24,28 +24,28 @@ function CorrectLogOutModalTemplate(props) {
         initial={{ scale: 0 }}
         animate={{ scale: 1 }}
       >
-        <motion.div className=" bg-white drop-shadow-2xl rounded-lg shadow w-[500px] h-[300px] flex justify-center items-center">
+        <motion.div className="bg-white drop-shadow-2xl rounded-lg shadow md:w-[500px] md:h-[300px] w-[400px] flex justify-center items-center">
           <motion.div
-            class="p-6 text-center"
+            className="p-6 text-center"
             initial={{ scale: 0 }}
             animate={{ scale: 1 }}
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              class="mx-auto mb-4 w-14 h-14 text-gray-400 dark:text-gray-200"
+              className="mx-auto mb-4 w-14 h-14 text-gray-400 dark:text-gray-200"
               fill="none"
               viewBox="0 0 24 24"
               stroke="green"
-              stroke-width="2"
+              strokeWidth="2"
             >
               <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeLinecap="round"
+                strokeLinejoin="round"
                 d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
               />
             </svg>
             <div className="flex justify-center">
-              <h3 class="mb-5 text-lg font-normal text-gray-700 dark:text-gray-400 w-[400px] px-10">
+              <h3 className="mb-5 text-lg font-normal text-gray-700 dark:text-gray-400 w-[400px] px-10">
                 {props.title}
               </h3>
             </div>

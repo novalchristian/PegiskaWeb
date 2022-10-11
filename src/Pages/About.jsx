@@ -2,9 +2,8 @@ import React from "react";
 import { AboutBackground, EmptyPerson, Maps } from "../Assets/Img";
 import { TitleHeroAtom } from "../Components/Atoms";
 import { TitleLightMolecules } from "../Components/Molecules";
-import { CompanyData } from '../Data/CompanyData'
+import { CompanyData } from "../Data/CompanyData";
 import { EmployeeData } from "../Data/EmployeeData";
-
 
 function About(props) {
   return (
@@ -45,7 +44,10 @@ function About(props) {
               </div>
               <div className="flex flex-wrap items-center justify-center">
                 {CompanyData.map((data) => (
-                  <div className="w-1/3 lg:w-1/5 flex justify-center">
+                  <div
+                    className="w-1/3 lg:w-1/5 flex justify-center"
+                    key={data.id}
+                  >
                     <div className="md:px-3 md:mt-4 flex justify-center md:static">
                       <img
                         src={data.img}
@@ -62,7 +64,7 @@ function About(props) {
       </div>
 
       {/* Section 3 */}
-      <div className="md:pt-16 pt-16 pb-32 flex justify-center bg-white">
+      <div className="md:pt-16 pt-10 pb-32 flex justify-center bg-white">
         <div className="container">
           <div className="w-full px-4">
             <div className="mb-[-3rem] md:mb-[-3rem] mx-auto text-center max-w-5xl">
@@ -71,7 +73,7 @@ function About(props) {
                 titleInd="Lokasi Kami"
                 subTitle="Untuk mendapatkan info lebih mendalam sebagai pengguna jasa, anda bisa mengunjungi kantor PT Pegiska Berkat Abadi di alamat di bawah ini."
               />
-              <div className="flex flex-wrap-reverse items-center justify-center pt-8 mt-10 md:mt-0 max-w-[62rem] h-[50vh]">
+              <div className="flex flex-wrap-reverse items-center justify-center pt-8 mt-4 md:mt-0 max-w-[62rem] h-[50vh]">
                 <div className="w-full lg:w-1/2 mx-10 md:mx-0 ">
                   <h2 className="text-center md:text-left md:text-[1.5rem] md:w-[400px] w-[350px] mt-6 md:mt-0 text-red-700">
                     Jl. Swasembada Barat XXIII No 41A, RW 14, Kb, Bawang,
@@ -80,7 +82,7 @@ function About(props) {
                   </h2>
                 </div>
                 <div className="lg:w-1/2 flex justify-center md:justify-end items-center">
-                  <div className="mt-10 md:mt-4 bg-teal-100 w-3/4 md:w-4/6 border-2 hover:-translate-y-1 hover:scale-110 duration-300 shadow-Three">
+                  <div className=" md:mt-4 bg-teal-100 w-3/4 md:w-4/6 border-2 hover:-translate-y-1 hover:scale-110 duration-300 shadow-Three">
                     <a href="https://maps.app.goo.gl/rC7DbnPagi8e45rU6">
                       <img src={Maps} alt={"Maps"} />
                     </a>
@@ -104,7 +106,7 @@ function About(props) {
               />
               <div className="flex flex-wrap items-center justify-center mt-4 md:mt-0">
                 {EmployeeData.map((data) => (
-                  <div className="w-2/4 lg:w-1/3 flex-col flex justify-center mt-4">
+                  <div className="w-2/4 lg:w-1/3 flex-col flex justify-center mt-4" key={data.id}>
                     <div className="md:mt-16 md:px-3 md:mx-10 mx-4  flex justify-center md:static bg-blue md:rounded-[30px] rounded-[12px] shadow-Four">
                       {data.img ? (
                         <img

@@ -55,7 +55,7 @@ export default function AddJasaModal(props) {
         initial={{ scale: 0 }}
         animate={{ scale: 1 }}
       >
-        <motion.div className=" bg-white drop-shadow-2xl rounded-lg shadow w-[600px] h-[550px] p-4 flex justify-center items-center">
+        <motion.div className=" bg-white drop-shadow-2xl rounded-lg shadow md:w-[600px] md:h-[550px] md:p-4 flex justify-center items-center">
           <button
             type="button"
             className="absolute top-3 right-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-800 dark:hover:text-white"
@@ -71,29 +71,29 @@ export default function AddJasaModal(props) {
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
-                fill-rule="evenodd"
+                fillRule="evenodd"
                 d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-                clip-rule="evenodd"
+                clipRule="evenodd"
               ></path>
             </svg>
           </button>
 
-          <motion.div class="p-6">
+          <motion.div className="p-6">
             {/* ICON TENGAH */}
             <div className="flex justify-center">
-              <h3 class="mb-5 text-2xl font-bold text-primary w-[400px] px-10">
+              <h3 className="mb-5 md:text-2xl text-xl font-bold text-primary w-[400px] px-10">
                 Tambahkan Jasa
               </h3>
             </div>
             {TambahJasa.map((data) => (
               <label className="block pb-3 ">
-                <span className="after:content-['*'] after:ml-0.5 after:text-red-500 block text-sm font-medium text-slate-700 text-left mb-2">
+                <span className="after:content-['*'] after:ml-0.5 after:text-red-500 block md:text-base text-[14px] font-medium text-slate-700 text-left mb-2">
                   {data.title}
                 </span>
                 <input
                   type={data.type}
                   name={data.name}
-                  className="mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-primary focus:ring-primary block w-full rounded-md sm:text-sm focus:ring-1 invalid:border-pink-500 invalid:text-pink-600 focus:invalid:border-pink-500 focus:invalid:ring-pink-500 placeholder:text-[14px] "
+                  className="mt-1 px-3 mx-auto py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-primary focus:ring-primary block w-full rounded-md sm:text-sm focus:ring-1 invalid:border-pink-500 invalid:text-pink-600 focus:invalid:border-pink-500 focus:invalid:ring-pink-500 placeholder:text-[14px] "
                   placeholder={data.placeholder}
                 />
               </label>
@@ -102,7 +102,7 @@ export default function AddJasaModal(props) {
             <button
               data-modal-toggle="defaultModal"
               type="button"
-              className="text-white bg-green-500 hover:bg-green-600 focus:ring-4 focus:outline-none focus:ring-[#93c5fd] font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-5 mt-5"
+              className="text-white bg-green-500 hover:bg-green-600 focus:ring-4 focus:outline-none focus:ring-[#93c5fd] font-medium rounded-lg md:text-base text-[14px] px-5 py-2.5 text-center mr-5 mt-5"
               onClick={() => {
                 setOpenTrueModal(true);
               }}
@@ -114,7 +114,7 @@ export default function AddJasaModal(props) {
               id="closeModal"
               data-modal-toggle="popup-modal"
               type="button"
-              class="text-gray-500 bg-white hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-gray-200 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-500 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-600"
+              className="text-white bg-slate-700 hover:bg-slate-800 focus:ring-4 focus:outline-none focus:ring-gray-200 rounded-lg border border-gray-200 md:text-base text-[14px] font-medium px-5 py-2.5 hover:text-white focus:z-10"
             >
               Batalkan
             </motion.button>

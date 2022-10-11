@@ -16,6 +16,7 @@ function NavTemplate(props) {
   const [openModal, setOpenModal] = useState(false);
   const [open, setOpen] = useState(false);
   const data = JSON.parse(localStorage.getItem("dataPengguna"));
+
   return (
     <div className="shadow-md w-full fixed top-0 left-0 z-10">
       <div className="md:flex items-center justify-between bg-white py-3 md:px-20 px-7 ">
@@ -56,13 +57,13 @@ function NavTemplate(props) {
           ))}
           {localStorage.getItem("session") !== null ? (
             <button
-              class="relative rounded-full px-3 md:py-1.5 py-[3px] overflow-hidden group bg-primary hover:bg-gradient-to-r hover:from-primary hover:to-blue-500 text-white hover:ring-2 hover:ring-offset-2 hover:ring-blue-500 transition-all ease-out duration-300"
+              className="relative rounded-full px-3 md:py-1.5 py-[3px] overflow-hidden group bg-primary hover:bg-gradient-to-r hover:from-primary hover:to-blue-500 text-white hover:ring-2 hover:ring-offset-2 hover:ring-blue-500 transition-all ease-out duration-300"
               onClick={() => {
                 setOpenModal(true);
               }}
             >
-              <span class="absolute right-0 w-3 h-15 -mt-12 transition-all duration-1000 transform translate-x-12 bg-white opacity-10 rotate-12 group-hover:-translate-x-40 ease"></span>
-              <span class="relative md:text-xs text-[8px]">
+              <span className="absolute right-0 w-3 h-15 -mt-12 transition-all duration-1000 transform translate-x-12 bg-white opacity-10 rotate-12 group-hover:-translate-x-40 ease"></span>
+              <span className="relative md:text-xs text-[8px]">
                 {"Halo, " + data.nama}
               </span>
             </button>

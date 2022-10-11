@@ -1,19 +1,17 @@
 import React, { useState } from "react";
 import { QuestionModal } from ".";
-import { ButtonActiveMolecules, ButtonDisableMolecules } from "../Molecules";
+import { ButtonActiveMolecules } from "../Molecules";
 import { PengajuanHeaderOrganism } from "../Organisms";
-import {PesananData} from '../../Data/PesananData'
+import { PesananData } from "../../Data/PesananData";
 
 function PengajuanTemplate(props) {
   const [openModal, setOpenModal] = useState(false);
-  const [login] = useState(props.login);
-
 
   return (
-    <div className="md:pt-20 pt-3 md:mt-8 pb-10 flex justify-center">
+    <div className="md:pt-20 pt-24 md:mt-8 pb-10 flex justify-center">
       <div className="container">
         <div className="w-full px-4">
-          <div className="mx-auto mb-16 text-center md:max-w-3xl">
+          <div className="md:mx-auto mb-16 text-center md:max-w-3xl mx-4">
             <PengajuanHeaderOrganism
               titleEng={props.titleEng}
               titleInd={props.titleInd}
@@ -21,7 +19,7 @@ function PengajuanTemplate(props) {
             />
             <div>
               {PesananData.map((data) => (
-                <label className="block md:pb-6 pb-4">
+                <label className="block md:pb-6 pb-4" key={data.id}>
                   <span className="after:content-['*'] after:ml-0.5 after:text-red-500 block text-sm font-medium text-slate-700 text-left">
                     {data.title}
                   </span>
@@ -34,17 +32,10 @@ function PengajuanTemplate(props) {
                 </label>
               ))}
               <div className="flex flex-col mt-4">
-                {login ? (
                   <ButtonActiveMolecules
                     setOpenModal={setOpenModal}
                     title="Kirim"
                   />
-                ) : (
-                  <ButtonDisableMolecules
-                    setOpenModal={setOpenModal}
-                    title="kirim"
-                  />
-                )}
                 {openModal && (
                   <QuestionModal
                     closeModal={setOpenModal}

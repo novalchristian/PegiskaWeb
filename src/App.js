@@ -10,6 +10,7 @@ import {
   SignUpPage,
   PengajuanPage,
   AdminAddBlog,
+  AdminDetailPengajuan,
 } from "./Pages";
 import NavbarLayout from "./Layout/NavbarLayout";
 import axios from "axios";
@@ -42,6 +43,7 @@ function App() {
         <Route element={<HomePage data={dataBlog} />} path="/" exact />
         <Route element={<PenawaranPage />} path="/penawaran" />
         <Route element={<PengajuanPage />} path="/pengajuan" />
+        <Route element={<AdminDetailPengajuan />} path="/detail-pesanan/:id" />
         <Route element={<BlogPage data={dataBlog} />} path="/blog" />
         <Route element={<BlogDetailPage />} path="/detail-blog/:id" />
         <Route element={<AboutPage />} path="/about" />

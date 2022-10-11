@@ -27,7 +27,10 @@ function UserLoginPenawaranTemplate(props) {
               </div>
 
               {props.data.map((data) => (
-                <div className="border-2 pb-4 pt-4 px-4 mb-6 bg-slate-700 rounded-2xl ">
+                <div
+                  className="border-2 pb-4 pt-4 px-4 mb-6 bg-slate-700 rounded-2xl"
+                  key={data.id_jasa}
+                >
                   <h4 className="text-yellow-400 font-bold text-left md:text-[22px] text-[14px] border-b-[1px] p-2 mx-2">
                     {data.id_jasa}. {data.nama_jasa}{" "}
                     {data.id_jasa === 1 && (
@@ -65,16 +68,16 @@ function UserLoginPenawaranTemplate(props) {
                       </span>
                     )}
                   </h4>
-                  <div className="flex text-white mt-4 justify-between px-10 text-lg">
-                    <h4 className="text-center pl-[16px]">20 Feet</h4>
-                    <h4 className="text-center">40 Feet</h4>
-                    <h4 className="text-center pr-[24px]">LCL</h4>
+                  <div className="flex text-white mt-4 justify-between px-10 md:text-lg text-[14px]">
+                    <h4 className="text-center md:pl-[16px]">20 Feet</h4>
+                    <h4 className="text-center pr-[18px] md:pr-0">40 Feet</h4>
+                    <h4 className="text-center md:pr-[24px] pr-[4px]">LCL</h4>
                   </div>
-                  <div className="flex text-white mt-4 justify-between px-4 text-xl font-bold">
+                  <div className="flex text-white mt-4 justify-between px-4 md:text-xl text-[11px] font-bold">
                     <h4 className="text-center">
                       {formatter.format(data.feet20)}
                     </h4>
-                    <h4 className="text-center pl-6">
+                    <h4 className="text-center md:pl-6">
                       {formatter.format(data.feet40)}
                     </h4>
                     <h4 className="text-center">
@@ -87,15 +90,17 @@ function UserLoginPenawaranTemplate(props) {
                       <h4 className="text-yellow-400 font-medium text-left md:text-[18px] text-[14px] border-[1px] p-2 rounded-lg mx-2">
                         (Container ke - 4 dan seterusnya)
                       </h4>
-                      <div className="flex text-white mt-4 justify-start px-10 text-lg ">
-                        <h4 className="text-center ml-6 mr-[120px]">20 Feet</h4>
+                      <div className="flex text-white mt-4 justify-start px-10 md:text-lg text-[14px]">
+                        <h4 className="text-center md:ml-6 md:mr-[120px]">
+                          20 Feet
+                        </h4>
                         <h4 className="text-center mx-10">40 Feet</h4>
                       </div>
-                      <div className="flex text-white mt-4 justify-start px-4 text-xl font-bold">
-                        <h4 className="text-center mr-10">
+                      <div className="flex text-white mt-4 justify-start px-4 md:text-xl text-[11px] font-bold">
+                        <h4 className="text-center md:mr-10 mr-[15px]">
                           {formatter.format(data.feet20 - 250000)}
                         </h4>
-                        <h4 className="text-center mx-10">
+                        <h4 className="text-center md:mx-10 ml-[4px]">
                           {formatter.format(data.feet40 - 250000)}
                         </h4>
                       </div>
@@ -106,15 +111,17 @@ function UserLoginPenawaranTemplate(props) {
                       <h4 className="text-yellow-400 text-left font-medium md:text-[18px] text-[14px] border-[1px] p-2 rounded-lg mx-2">
                         (Container Berikutnya)
                       </h4>
-                      <div className="flex text-white mt-4 justify-start px-10 text-lg ">
-                        <h4 className="text-center ml-6 mr-[120px]">20 Feet</h4>
+                      <div className="flex text-white mt-4 justify-start px-10 md:text-lg text-[14px]">
+                        <h4 className="text-center md:ml-6 md:mr-[120px]">
+                          20 Feet
+                        </h4>
                         <h4 className="text-center mx-10">40 Feet</h4>
                       </div>
-                      <div className="flex text-white mt-4 justify-start px-4 text-xl font-bold">
-                        <h4 className="text-center mr-10">
+                      <div className="flex text-white mt-4 justify-start px-4 md:text-xl text-[11px] font-bold">
+                        <h4 className="text-center md:mr-10 mr-[15px]">
                           {formatter.format(data.feet20 - 250000)}
                         </h4>
-                        <h4 className="text-center mx-10">
+                        <h4 className="text-center md:mx-10 ml-[4px]">
                           {formatter.format(data.feet40 - 250000)}
                         </h4>
                       </div>
@@ -126,18 +133,18 @@ function UserLoginPenawaranTemplate(props) {
                         <h4 className="text-yellow-400 text-left font-medium md:text-xl text-[14px] border-[1px] p-2 rounded-lg mx-2">
                           6 s/d 10 Container
                         </h4>
-                        <div className="flex text-white mt-4 justify-start px-10 text-lg ">
-                          <h4 className="text-center ml-6 mr-[120px]">
+                        <div className="flex text-white mt-4 justify-start px-10 md:text-lg text-[14px]">
+                          <h4 className="text-center md:ml-6 md:mr-[120px]">
                             20 Feet
                           </h4>
                           <h4 className="text-center mx-10">40 Feet</h4>
                         </div>
-                        <div className="flex text-white mt-4 justify-start px-4 text-xl font-bold">
-                          <h4 className="text-center mr-10">
-                            {formatter.format(data.feet20 + 150000)}
+                        <div className="flex text-white mt-4 justify-start px-4 md:text-xl text-[11px] font-bold">
+                          <h4 className="text-center md:mr-10 mr-[15px]">
+                            {formatter.format(data.feet20 - 150000)}
                           </h4>
-                          <h4 className="text-center mx-10">
-                            {formatter.format(data.feet40 + 150000)}
+                          <h4 className="text-center md:mx-10 ml-[4px]">
+                            {formatter.format(data.feet40 - 150000)}
                           </h4>
                         </div>
                       </div>
@@ -145,17 +152,17 @@ function UserLoginPenawaranTemplate(props) {
                         <h4 className="text-yellow-400 text-left font-medium md:text-xl text-[14px] border-[1px] p-2 rounded-lg mx-2">
                           10 s/d Container Seterusnya
                         </h4>
-                        <div className="flex text-white mt-4 justify-start px-10 text-lg ">
-                          <h4 className="text-center ml-6 mr-[120px]">
+                        <div className="flex text-white mt-4 justify-start px-10 md:text-lg text-[14px]">
+                          <h4 className="text-center md:ml-6 md:mr-[120px]">
                             20 Feet
                           </h4>
                           <h4 className="text-center mx-10">40 Feet</h4>
                         </div>
-                        <div className="flex text-white mt-4 justify-start px-4 text-xl font-bold">
-                          <h4 className="text-center mr-10">
+                        <div className="flex text-white mt-4 justify-start px-4 md:text-xl text-[11px] font-bold">
+                          <h4 className="text-center md:mr-10 mr-[15px]">
                             {formatter.format(data.feet20 + 400000)}
                           </h4>
-                          <h4 className="text-center mx-10">
+                          <h4 className="text-center md:mx-10 ml-[4px]">
                             {formatter.format(data.feet40 + 400000)}
                           </h4>
                         </div>
