@@ -9,8 +9,10 @@ import PengajuanPage from "./Pengajuan";
 import AdminEditPengajuanPage from "./AdminEditPengajuan";
 import AdminAddBlog from "./AdminAddBlog";
 import AdminDetailPengajuan from "./AdminDetailPengajuan";
+import AdminEditBlog from "./AdminEditBlog";
 
 export {
+  AdminEditBlog,
   AdminDetailPengajuan,
   AdminAddBlog,
   AdminEditPengajuanPage,

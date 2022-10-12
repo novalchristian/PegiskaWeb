@@ -65,7 +65,7 @@ function AdminDetailPengajuan() {
                 <div className="md:w-full w-3/4  lg:w-1/3 flex justify-center">
                   <div className="text-left flex justify-center flex-col items-center">
                     <h1 className="mb-4 border-2 border-blue bg-blue text-white w-full text-center">
-                      Nomor Ijin Berusaha
+                      Nomor Induk Berusaha
                     </h1>
                     <Document file={getUrlBase + dataPesanan.nib}>
                       <Page height="400" pageNumber={1} />

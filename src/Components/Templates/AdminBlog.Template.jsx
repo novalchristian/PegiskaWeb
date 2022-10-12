@@ -3,14 +3,14 @@ import { TitleLightMolecules } from "../Molecules";
 import { Link } from "react-router-dom";
 import { useRecoilState } from "recoil";
 import { urlBase } from "../../store";
-import axios from 'axios'
+import axios from "axios";
 
 function AdminBlogTemplate(props) {
   const [getUrlBase] = useRecoilState(urlBase);
 
   async function delBlog(id) {
     const request = await axios
-      .delete(getUrlBase + `blog/${id}`,{
+      .delete(getUrlBase + `blog/${id}`, {
         headers: {
           "Content-Type": "multipart/form-data",
           session: localStorage.getItem("session"),
@@ -40,10 +40,8 @@ function AdminBlogTemplate(props) {
                 subTitle={props.subTitle}
               />
               <div className="flex justify-center items-center">
-                <Link to="/AddBlog">
-                  <button
-                    className="flex justify-center items-center text-white bg-green-600 hover:bg-green-700 rounded-lg text-sm py-2 px-3 mt-6"
-                  >
+                <Link to="/blog/AddBlog">
+                  <button className="flex justify-center items-center text-white bg-green-600 hover:bg-green-700 rounded-lg text-sm py-2 px-3 mt-6">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       className="h-5 w-5"
@@ -64,10 +62,13 @@ function AdminBlogTemplate(props) {
             <div className="flex justify-start">
               <div className="flex flex-wrap justify-center items-start md:ml-0 cursor-pointer">
                 {props.data.map((list) => (
-                  <div className="md:w-full w-[40%] lg:w-1/3 md:py-3 md:px-7 mb-7  hover:-translate-y-1 hover:scale-110 duration-300 w:2/3 mx-2 md:m-0" key={list.id_blog}>
+                  <div
+                    className="md:w-full w-[40%] lg:w-1/3 md:py-3 md:px-7 mb-7  hover:-translate-y-1 hover:scale-110 duration-300 w:2/3 mx-2 md:m-0"
+                    key={list.id_blog}
+                  >
                     <div className="mt-2 md:mt-4 flex flex-col md:static text-left border-[#d3d3d3] border rounded-default shadow-Three">
                       <img
-                        src={getUrlBase + list.blog} 
+                        src={getUrlBase + list.blog}
                         alt="Gambar Contoh"
                         className=" md:w-full border rounded-t-default md:h-[200px] h-[80px]"
                       />
@@ -81,7 +82,7 @@ function AdminBlogTemplate(props) {
                           </p>
                         </div>
                         <div className="mt-6 flex ">
-                          <Link to={`/detail-blog/${list.id_blog}`}>
+                          <Link to={`/blog/detail-blog/${list.id_blog}`}>
                             <button className="relative rounded-full px-3 md:py-1.5 py-[3px] overflow-hidden group bg-primary hover:bg-gradient-to-r hover:from-primary hover:to-blue-500 text-white hover:ring-2 hover:ring-offset-2 hover:ring-blue-500 transition-all ease-out duration-300">
                               <span className="absolute right-0 w-3 h-15 -mt-12 transition-all duration-1000 transform translate-x-12 bg-white opacity-10 rotate-12 group-hover:-translate-x-40 ease"></span>
                               <span className="relative md:text-xs text-[8px]">
@@ -89,39 +90,42 @@ function AdminBlogTemplate(props) {
                               </span>
                             </button>
                           </Link>
-                          <button
-                            type="button"
-                            className="flex justify-center text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm ml-auto py-1.5 px-2 items-center dark:hover:bg-gray-800 dark:hover:text-white"
-                            data-modal-toggle="popup-modal"
-                          >
-                            {/* Edit ICON */}
-                            <svg
-                              xmlns="http://www.w3.org/2000/svg"
-                              className="h-7 w-7"
-                              fill="none"
-                              viewBox="0 0 24 24"
-                              stroke="orange"
-                              strokeWidth="2"
+                          <Link to={`/blog/edit-blog/${list.id_blog}`}>
+                            <button
+                              type="button"
+                              className="flex justify-center text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm ml-auto py-1.5 px-2 items-center dark:hover:bg-gray-800 dark:hover:text-white"
+                              data-modal-toggle="popup-modal"
                             >
-                              <path
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"
-                              />
-                              <path
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
-                              />
-                            </svg>
-                            <h1 className="text-lg text-orange-300 pl-2 pt-[2px]">
-                              Edit
-                            </h1>
-                          </button>
+                              {/* Edit ICON */}
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                className="h-7 w-7"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                stroke="orange"
+                                strokeWidth="2"
+                              >
+                                <path
+                                  strokeLinecap="round"
+                                  strokeLinejoin="round"
+                                  d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"
+                                />
+                                <path
+                                  strokeLinecap="round"
+                                  strokeLinejoin="round"
+                                  d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+                                />
+                              </svg>
+                              <h1 className="text-lg text-orange-300 pl-2 pt-[2px]">
+                                Edit
+                              </h1>
+                            </button>
+                          </Link>
                           <button
                             type="button"
                             className="flex justify-center text-gray-400 bg-red-500 hover:bg-red-600  rounded-3xl text-sm ml-auto py-1.5 px-2 items-center p-2"
-                            data-modal-toggle="popup-modal" onClick={()=> delBlog(list.id_blog)}
+                            data-modal-toggle="popup-modal"
+                            onClick={() => delBlog(list.id_blog)}
                           >
                             {/* Delete ICON */}
                             <svg

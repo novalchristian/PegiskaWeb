@@ -19,8 +19,10 @@ import AdminBlogTemplate from "./AdminBlog.Template";
 import LogOutModalTemplate from "./logOutModal.Template";
 import CorrectLogOutModalTemplate from "./correctLogOutModal.Template";
 import UserNotLoginPengajuan from "./UserNotLoginPengajuan.Template";
+import PengajuanModalTemplate from "./PengajuanModal.Template";
 
 export {
+  PengajuanModalTemplate,
   UserNotLoginPengajuan,
   CorrectLogOutModalTemplate,
   LogOutModalTemplate,

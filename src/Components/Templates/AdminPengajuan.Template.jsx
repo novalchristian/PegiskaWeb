@@ -10,8 +10,9 @@ import localization from "moment/locale/id";
 
 moment.updateLocale("id", localization);
 
-export default function AdminPengajuanTemplate(props) {
+export default function AdminPengajuanTemplate() {
   moment.locale("id");
+  const [searchTerm, setSearchTerm] = useState("");
   const [getUrlBase] = useRecoilState(urlBase);
   const [dataPesanan, setDataPesanan] = useState([]);
 
@@ -54,7 +55,7 @@ export default function AdminPengajuanTemplate(props) {
               <div className="relative mt-1">
                 <div className="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
                   <svg
-                    className="w-5 h-5 text-gray-500 dark:text-gray-400"
+                    className="w-5 h-5 text-gray-500"
                     aria-hidden="true"
                     fill="currentColor"
                     viewBox="0 0 20 20"
@@ -69,9 +70,11 @@ export default function AdminPengajuanTemplate(props) {
                 </div>
                 <input
                   type="text"
-                  id="table-search"
                   className="block p-2 pl-10 w-80 text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue focus:border-blue "
-                  placeholder="Cari pesanan"
+                  placeholder="Cari pesanan..."
+                  onChange={(e) => {
+                    setSearchTerm(e.target.value);
+                  }}
                 />
               </div>
             </div>
@@ -99,37 +102,52 @@ export default function AdminPengajuanTemplate(props) {
                 </tr>
               </thead>
 
-              {dataPesanan.map((data) => (
-                <tbody key={data.id_pesanan}>
-                  <tr className="bg-white border-b hover:bg-gray-50">
-                    <td className="py-4 px-6 font-medium text-gray-900 whitespace-nowrap">
-                      {moment(data.createdAt).locale("id").format("LL")}
-                    </td>
-                    <th
-                      scope="row"
-                      className="py-4 px-6 font-medium text-gray-900 whitespace-nowrap"
-                    >
-                      {data.nama}
-                    </th>
-                    <td className="py-4 px-6">{data.email}</td>
-                    <td className="py-4 px-6">{data.noWa}</td>
-                    <td className="py-4 px-6">{data.namaPerusahaan}</td>
-                    <td className="py-4 px-6 flex justify-center md:flex-row items-center">
-                      {/* BIKIN LINK TO HALAMAN EDIT */}
-                      <Link to={`/pesanan/edit/${data.id_pesanan}`}>
-                        <button className="py-2 bg-sky-600 hover:bg-sky-500 text-white rounded-lg px-4 ml-4 mt-4 md:mt-0">
-                          Edit
-                        </button>
-                      </Link>
-                      <Link to={`/detail-pesanan/${data.id_pesanan}`}>
-                        <button className="p-2 bg-yellow-400 hover:bg-yellow-300 text-white rounded-lg ml-4 md:mt-0 mt-4">
-                          Detail
-                        </button>
-                      </Link>
-                    </td>
-                  </tr>
-                </tbody>
-              ))}
+              {dataPesanan
+                // eslint-disable-next-line array-callback-return
+                .filter((data) =>  {
+                  if (searchTerm === "") {
+                    return data;
+                  } else if (
+                    data.nama.toLowerCase().includes(searchTerm.toLowerCase())
+                  ) {
+                    return data;
+                  } else if (
+                    data.namaPerusahaan.toLowerCase().includes(searchTerm.toLowerCase())
+                  ) {
+                    return data;
+                  }
+                })
+                .map((data) => (
+                  <tbody key={data.id_pesanan}>
+                    <tr className="bg-white border-b hover:bg-gray-50">
+                      <td className="py-2 px-6 font-medium text-gray-900 whitespace-nowrap">
+                        {moment(data.createdAt).locale("id").format("LL")}
+                      </td>
+                      <th
+                        scope="row"
+                        className="py-2 px-6 font-medium text-gray-900 whitespace-nowrap"
+                      >
+                        {data.nama}
+                      </th>
+                      <td className="py-2 px-6">{data.email}</td>
+                      <td className="py-2 px-6">{data.noWa}</td>
+                      <td className="py-2 px-6">{data.namaPerusahaan}</td>
+                      <td className="py-2 px-6 flex justify-center md:flex-row items-center">
+                        {/* BIKIN LINK TO HALAMAN EDIT */}
+                        <Link to={`/pesanan/edit/${data.id_pesanan}`}>
+                          <button className="py-2 bg-sky-600 hover:bg-sky-500 text-white rounded-lg px-4 ml-4 mt-4 md:mt-0">
+                            Edit
+                          </button>
+                        </Link>
+                        <Link to={`/detail-pesanan/${data.id_pesanan}`}>
+                          <button className="p-2 bg-yellow-400 hover:bg-yellow-300 text-white rounded-lg ml-4 md:mt-0 mt-4">
+                            Detail
+                          </button>
+                        </Link>
+                      </td>
+                    </tr>
+                  </tbody>
+                ))}
             </table>
           </div>
         </div>
