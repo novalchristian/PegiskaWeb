@@ -13,7 +13,6 @@ import AdminPenawaranTemplate from "./AdminPenawaran.Template";
 import UserNotLoginPenawaranTemplate from "./UserNotLoginPenawaran.Template";
 import UserLoginPenawaranTemplate from "./UserLoginPenawaran.Template";
 import AdminPengajuanTemplate from "./AdminPengajuan.Template";
-import AddJasaModalTemplate from "./AddJasaModal.Template";
 import EditJasaModalTemplate from "./EditJasaModal.Template";
 import AdminBlogTemplate from "./AdminBlog.Template";
 import LogOutModalTemplate from "./logOutModal.Template";
@@ -28,7 +27,6 @@ export {
   LogOutModalTemplate,
   AdminBlogTemplate,
   EditJasaModalTemplate,
-  AddJasaModalTemplate,
   AdminPengajuanTemplate,
   NavTemplate,
   HomeHeroTemplate,

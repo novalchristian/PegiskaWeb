@@ -104,7 +104,7 @@ export default function AdminPengajuanTemplate() {
 
               {dataPesanan
                 // eslint-disable-next-line array-callback-return
-                .filter((data) =>  {
+                .filter((data) => {
                   if (searchTerm === "") {
                     return data;
                   } else if (
@@ -112,7 +112,9 @@ export default function AdminPengajuanTemplate() {
                   ) {
                     return data;
                   } else if (
-                    data.namaPerusahaan.toLowerCase().includes(searchTerm.toLowerCase())
+                    data.namaPerusahaan
+                      .toLowerCase()
+                      .includes(searchTerm.toLowerCase())
                   ) {
                     return data;
                   }

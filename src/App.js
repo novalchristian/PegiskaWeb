@@ -12,6 +12,8 @@ import {
   AdminAddBlog,
   AdminDetailPengajuan,
   AdminEditBlog,
+  AdminAddJasa,
+  AdminEditJasa,
 } from "./Pages";
 import NavbarLayout from "./Layout/NavbarLayout";
 import axios from "axios";
@@ -45,6 +47,8 @@ function App() {
         <Route element={<HomePage data={dataBlog} />} path="/" exact />
         {/* Penawaran */}
         <Route element={<PenawaranPage />} path="/penawaran" />
+        <Route element={<AdminAddJasa />} path="/penawaran/add-jasa" />
+        <Route element={<AdminEditJasa />} path="/penawaran/edit-jasa/:id" />
         {/* Pengajuan */}
         <Route element={<PengajuanPage />} path="/pengajuan" />
         <Route element={<AdminDetailPengajuan />} path="/detail-pesanan/:id" />
@@ -55,6 +59,8 @@ function App() {
         <Route element={<AdminAddBlog />} path="/blog/AddBlog" exact />
         {/* About */}
         <Route element={<AboutPage />} path="/about" />
+        {/* Wrong URL */}
+        {/* <Route path="*" element={<HomePage data={dataBlog} />} /> */}
       </Route>
     </Routes>
   );

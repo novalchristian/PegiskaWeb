@@ -20,11 +20,11 @@ export default function AdminEditBlog() {
       const request = await axios
         .get(getUrlBase + `blog/${id}`)
         .then((res) => {
-        //   setNewBlog(res.data.result);
-            console.log(res.data.result);
-          //   setNewBlog.blog(res.data.result.blog);
-          //   setNewBlog.judul(res.data.result.judul);
-          //   setNewBlog.isi(res.data.result.isi);
+          setNewBlog(res.data.result);
+          // console.log(res.data.result);
+          // setNewBlog.blog(res.data.result.blog);
+          // setNewBlog.judul(res.data.result.judul);
+          // setNewBlog.isi(res.data.result.isi);
         })
         .catch((er) => console.log("Error: ", er));
       return request;
@@ -61,7 +61,6 @@ export default function AdminEditBlog() {
         <div className="container">
           <div className="w-full px-4">
             <div className="mb-[-3rem] md:mb-[-3rem] mx-auto text-center max-w-5xl">
-                <h1>{newBlog.judul}</h1>
               <TitleLightMolecules
                 titleInd="Perbarui Blog"
                 titleEng="Update Blog"
@@ -73,11 +72,16 @@ export default function AdminEditBlog() {
                   Gambar
                 </span>
                 <input
+                  // title={newBlog.blog.substring(
+                  //     newBlog.blog.lastIndexOf("/") + 1
+                  //   )}
                   type="file"
                   name="blog"
                   className="mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-primary focus:ring-primary block w-full rounded-md sm:text-sm focus:ring-1 invalid:border-pink-500 invalid:text-pink-600 focus:invalid:border-pink-500 focus:invalid:ring-pink-500"
                   placeholder="Tambahkan Gambar..."
-                  value={newBlog.blog}
+                  // defaultValue={newBlog.blog.substring(
+                  //   newBlog.blog.lastIndexOf("/") + 1
+                  // )}
                   onChange={(e) => {
                     setNewBlog({
                       ...newBlog,
@@ -86,7 +90,7 @@ export default function AdminEditBlog() {
                   }}
                 />
               </label>
-              <label className="block pb-3 pt-8">
+              <label className="block pb-3 pt-4">
                 <span className="after:content-['*'] after:ml-0.5 after:text-red-500 block text-sm font-medium text-slate-700 text-left">
                   Judul Blog
                 </span>
@@ -95,7 +99,7 @@ export default function AdminEditBlog() {
                   name="judul"
                   className="mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-primary focus:ring-primary block w-full rounded-md sm:text-sm focus:ring-1 invalid:border-pink-500 invalid:text-pink-600 focus:invalid:border-pink-500 focus:invalid:ring-pink-500"
                   placeholder="Masukkan Judul Blog..."
-                  value={newBlog.judul}
+                  defaultValue={newBlog.judul}
                   onChange={(e) => {
                     setNewBlog({
                       ...newBlog,
@@ -115,7 +119,7 @@ export default function AdminEditBlog() {
                   rows="15"
                   className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 "
                   placeholder="Masukkan Isi Blog..."
-                  value={newBlog.isi}
+                  defaultValue={newBlog.isi}
                   onChange={(e) => {
                     setNewBlog({
                       ...newBlog,

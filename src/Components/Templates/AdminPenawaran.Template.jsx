@@ -1,11 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
+import {Link} from 'react-router-dom'
 import { TitleLightMolecules } from "../Molecules";
 import { useNavigate } from "react-router-dom";
-import { AddJasaModalTemplate, EditJasaModalTemplate } from ".";
 
 function AdminPenawaranTemplate(props) {
-  const [openAddModal, setOpenAddModal] = useState(false);
-  const [openEditModal, setOpenEditModal] = useState(false);
   var formatter = new Intl.NumberFormat("id-ID", {
     style: "currency",
     currency: "IDR",
@@ -33,29 +31,23 @@ function AdminPenawaranTemplate(props) {
                 />
               </div>
               <div className="flex justify-center items-center">
-                <button
-                  className="flex justify-center items-center text-white bg-green-600 hover:bg-green-700 rounded-lg text-sm py-2 px-3 mr-4"
-                  onClick={() => {
-                    setOpenAddModal(true);
-                  }}
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="h-5 w-5"
-                    viewBox="0 0 20 20"
-                    fill="currentColor"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-11a1 1 0 10-2 0v2H7a1 1 0 100 2h2v2a1 1 0 102 0v-2h2a1 1 0 100-2h-2V7z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
-                  <h1 className="pl-2">Tambahkan Jasa</h1>
-                </button>
-                {openAddModal && (
-                  <AddJasaModalTemplate closeModal={setOpenAddModal} />
-                )}
+                <Link to="/penawaran/add-jasa">
+                  <button className="flex justify-center items-center text-white bg-green-600 hover:bg-green-700 rounded-lg text-sm py-2 px-3 mr-4">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="h-5 w-5"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-11a1 1 0 10-2 0v2H7a1 1 0 100 2h2v2a1 1 0 102 0v-2h2a1 1 0 100-2h-2V7z"
+                        clipRule="evenodd"
+                      />
+                    </svg>
+                    <h1 className="pl-2">Tambahkan Jasa</h1>
+                  </button>
+                </Link>
                 <button
                   className="flex justify-center items-center text-white bg-orange-600 hover:bg-orange-700 rounded-lg text-sm py-2 px-3"
                   onClick={handleSubmit}
@@ -78,7 +70,10 @@ function AdminPenawaranTemplate(props) {
               </div>
 
               {props.data.map((data) => (
-                <div className="border-2 pb-4 pt-4 px-4 mb-6 bg-slate-700 rounded-2xl mt-6" key={data.id_jasa}>
+                <div
+                  className="border-2 pb-4 pt-4 px-4 mb-6 bg-slate-700 rounded-2xl mt-6"
+                  key={data.id_jasa}
+                >
                   <div className="flex border-b-[1px] p-2 mx-2">
                     <div>
                       <h4 className="text-yellow-400 font-bold text-left md:text-[22px] text-[14px] md:w-[700px]">
@@ -119,38 +114,39 @@ function AdminPenawaranTemplate(props) {
                         )}
                       </h4>
                     </div>
-                    <button
-                      type="button"
-                      className="flex justify-center text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm md:py-1.5 md:px-2 px-1 ml-auto items-center"
-                      data-modal-toggle="popup-modal"
-                      onClick={() => {
-                        setOpenEditModal(true);
-                      }}
+                    <Link
+                      to={`/penawaran/edit-jasa/${data.id_jasa}`}
+                      className="ml-auto"
                     >
-                      {/* Edit ICON */}
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        className="md:h-7 md:w-7 h-5 w-5"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="orange"
-                        strokeWidth="2"
+                      <button
+                        type="button"
+                        className="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm flex md:py-1.5 md:px-2 px-1 "
                       >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"
-                        />
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
-                        />
-                      </svg>
-                      <h1 className="md:text-lg text-base text-orange-300 pl-2 pt-[2px]">
-                        Edit
-                      </h1>
-                    </button>
+                        {/* Edit ICON */}
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          className="md:h-7 md:w-7 h-5 w-5"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke="orange"
+                          strokeWidth="2"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"
+                          />
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+                          />
+                        </svg>
+                        <h1 className="md:text-lg text-base text-orange-300 pl-2 pt-[2px]">
+                          Edit
+                        </h1>
+                      </button>
+                    </Link>
                   </div>
                   <div className="flex text-white mt-4 justify-between px-10 md:text-lg text-[14px]">
                     <h4 className="text-center md:pl-[16px]">20 Feet</h4>
@@ -255,9 +251,6 @@ function AdminPenawaranTemplate(props) {
                   )}
                 </div>
               ))}
-              {openEditModal && (
-                <EditJasaModalTemplate closeModal={setOpenEditModal} />
-              )}
             </div>
           </div>
         </div>
