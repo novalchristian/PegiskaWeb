@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useLayoutEffect } from "react";
 import { TitleLightMolecules } from "../Components/Molecules";
 import axios from "axios";
 import { useRecoilState } from "recoil";
@@ -13,6 +13,10 @@ export default function AdminAddJasa() {
     feet20: "",
     feet40: "",
     lcl: "",
+  });
+
+  useLayoutEffect(() => {
+    window.scrollTo(0, 0);
   });
 
 

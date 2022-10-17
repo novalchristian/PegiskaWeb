@@ -16,6 +16,10 @@ export default function AdminEditJasa() {
     lcl: "",
   });
 
+  React.useLayoutEffect(() => {
+    window.scrollTo(0, 0);
+  });
+
   React.useEffect(() => {
     async function fetchDataJasaById() {
       const request = await axios

@@ -66,7 +66,7 @@ function CorrectLogOutModalTemplate(props) {
 
 CorrectLogOutModalTemplate.defaultProps = {
   title: "Terima Kasih Sudah Mampir, Jangan Lupa Datang Kembali",
-  buttonOne: "Okkay, Terima kasih",
+  buttonOne: "Baik, Terima Kasih",
 };
 
 export default CorrectLogOutModalTemplate;

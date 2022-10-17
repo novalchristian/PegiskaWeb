@@ -15,6 +15,10 @@ export default function AdminEditBlog() {
     isi: "",
   });
 
+  React.useLayoutEffect(() => {
+    window.scrollTo(0, 0);
+  });
+
   React.useEffect(() => {
     async function fetchDataBlogById() {
       const request = await axios

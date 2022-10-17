@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useLayoutEffect } from "react";
 import { TitleLightMolecules } from "../Components/Molecules";
 import axios from "axios";
 import { useRecoilState } from "recoil";
@@ -11,6 +11,10 @@ export default function AdminAddBlog() {
     blog: "",
     judul: "",
     isi: "",
+  });
+
+  useLayoutEffect(() => {
+    window.scrollTo(0, 0);
   });
 
   async function dataBlogBaru() {
@@ -91,7 +95,7 @@ export default function AdminAddBlog() {
                   name="isi"
                   id="message"
                   rows="15"
-                  className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 "
+                  className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 pb-4"
                   placeholder="Masukkan Isi Blog..."
                   onChange={(e) => {
                     setNewBlog({

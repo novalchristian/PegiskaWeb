@@ -27,6 +27,10 @@ function AdminEditPengajuan(props) {
     aktaPerubahan: "",
   });
 
+  React.useLayoutEffect(() => {
+    window.scrollTo(0, 0);
+  });
+
   React.useEffect(() => {
     async function fetchDataPesananById() {
       const request = await axios

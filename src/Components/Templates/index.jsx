@@ -19,8 +19,18 @@ import LogOutModalTemplate from "./logOutModal.Template";
 import CorrectLogOutModalTemplate from "./correctLogOutModal.Template";
 import UserNotLoginPengajuan from "./UserNotLoginPengajuan.Template";
 import PengajuanModalTemplate from "./PengajuanModal.Template";
+import DetailBlogTemplate from "./DetailBlog.Template";
+import AboutStakeholderTemplate from "./AboutStakeholder.Template";
+import AboutLocationTemplate from "./AboutLocation.Template";
+import AboutCompanyTemplate from "./AboutCompany.Template";
+import AboutHeroTemplate from "./AboutHero.Template";
 
 export {
+  AboutHeroTemplate,
+  AboutCompanyTemplate,
+  AboutLocationTemplate,
+  AboutStakeholderTemplate,
+  DetailBlogTemplate,
   PengajuanModalTemplate,
   UserNotLoginPengajuan,
   CorrectLogOutModalTemplate,

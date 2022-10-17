@@ -1,10 +1,14 @@
 /* eslint-disable no-unused-vars */
-import React, { useEffect } from "react";
+import React from "react";
 import { BlogTemplate, AdminBlogTemplate } from "../Components/Templates";
 
 function Blog({ data }) {
   const dataAdmin = JSON.parse(localStorage.getItem("dataPengguna"));
   const [isAdmin, setIsAdmin] = React.useState(false);
+
+  React.useLayoutEffect(() => {
+    window.scrollTo(0, 0);
+  });
 
   return (
     <>

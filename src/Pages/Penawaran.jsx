@@ -15,6 +15,10 @@ function Penawaran() {
   const data = JSON.parse(localStorage.getItem("dataPengguna"));
   // const [isAdmin] = useState();
 
+  React.useLayoutEffect(() => {
+    window.scrollTo(0, 0);
+  });
+
   useEffect(() => {
     async function fetchDataBlog() {
       const request = await axios

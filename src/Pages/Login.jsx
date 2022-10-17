@@ -1,19 +1,22 @@
 import React, { useState } from "react";
-import { PegiskaLogoWhite } from "../Assets/Img";
 import { CorrectModals } from "../Components/Templates";
 import axios from "axios";
 import { useRecoilState } from "recoil";
 import { urlBase } from "../store";
-import { Link } from "react-router-dom";
+import { PegiskaLogoButtonAtom, SubTitleButtonAtom } from "../Components/Atoms";
 
 function Login() {
   const [getUrlBase] = useRecoilState(urlBase);
   const [openModal, setOpenModal] = useState(false);
+  const [error, setError] = useState("");
   const [credential, setCredential] = useState({
     email: "",
     password: "",
   });
-  const [error, setError] = useState("");
+
+  React.useLayoutEffect(() => {
+    window.scrollTo(0, 0);
+  });
 
   async function fetchDataAccount(id_user) {
     const request = await axios
@@ -47,13 +50,9 @@ function Login() {
       })
       .then((res) => {
         localStorage.setItem("session", res.data.session);
-        // console.log(res.data);
-        // alert("Login Berhasil");
         fetchDataAccount(res.data.id_user);
       })
       .catch((er) => {
-        // console.log("Error: ", er.response.data);
-        // console.log(er.response);
         setError(er.response.data);
       });
     return request;
@@ -64,15 +63,7 @@ function Login() {
   return (
     <div className="bg-login-cover bg-cover relative">
       <div className="w-screen h-screen flex justify-center items-center">
-        <Link to="/">
-          <button>
-            <img
-              src={PegiskaLogoWhite}
-              alt="Logo Pegiska Putih"
-              className="absolute md:w-[300px] w-[350px] md:left-20 md:top-10 left-10 top-10"
-            />
-          </button>
-        </Link>
+        <PegiskaLogoButtonAtom />
         <div className="bg-white md:w-[450px] md:h-[450px] w-[350px] rounded-xl mt-20 md:p-10 p-6">
           <h1 className="md:text-2xl text-xl uppercase font-bold">Login</h1>
           <div className="md:mt-10 mt-6">
@@ -126,8 +117,6 @@ function Login() {
               className="relative rounded-full px-3 md:py-1.5 py-[3px] overflow-hidden group bg-primary hover:bg-gradient-to-r hover:from-primary hover:to-blue-500 text-white hover:ring-2 hover:ring-offset-2 hover:ring-blue-500 transition-all ease-out duration-300"
               onClick={() => {
                 authUser();
-                // setOpenModal(true);
-                // console.log(credential);
               }}
             >
               <span className="absolute right-0 w-3 h-15 -mt-12 transition-all duration-1000 transform translate-x-12 bg-white opacity-10 rotate-12 group-hover:-translate-x-40 ease"></span>
@@ -142,12 +131,11 @@ function Login() {
               />
             )}
           </div>
-          <p className="text-center mt-4 text-grayText">
-            Need an account?{" "}
-            <Link to="/SignUp">
-              <button className="hover:underline">SIGN UP</button>
-            </Link>
-          </p>
+          <SubTitleButtonAtom
+            title="Need an account? "
+            to="/SignUp"
+            button="SIGN UP"
+          />
         </div>
       </div>
     </div>

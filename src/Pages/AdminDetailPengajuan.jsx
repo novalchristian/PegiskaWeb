@@ -15,6 +15,10 @@ function AdminDetailPengajuan() {
   const [getUrlBase] = useRecoilState(urlBase);
   const [dataPesanan, setDataPesanan] = React.useState([]);
 
+  React.useLayoutEffect(() => {
+    window.scrollTo(0, 0);
+  });
+
   React.useEffect(() => {
     async function fetchDataPesananById() {
       const request = await axios
@@ -61,6 +65,8 @@ function AdminDetailPengajuan() {
               <a
                 href={getUrlBase + dataPesanan.nib}
                 className="md:w-full w-3/4  lg:w-1/3 flex justify-center"
+                target="_blank"
+                rel="noreferrer"
               >
                 <div className="md:w-full w-3/4  lg:w-1/3 flex justify-center">
                   <div className="text-left flex justify-center flex-col items-center">
@@ -76,6 +82,8 @@ function AdminDetailPengajuan() {
               <a
                 href={getUrlBase + dataPesanan.aktaPendirian}
                 className="md:w-full w-3/4  lg:w-1/3 flex justify-center"
+                target="_blank"
+                rel="noreferrer"
               >
                 <div className="md:w-full w-3/4  lg:w-1/3 flex justify-center">
                   <div className="text-left flex justify-center flex-col items-center">
@@ -95,6 +103,8 @@ function AdminDetailPengajuan() {
               <a
                 href={getUrlBase + dataPesanan.aktaPendirian}
                 className="md:w-full w-3/4  lg:w-1/3 flex justify-center"
+                target="_blank"
+                rel="noreferrer"
               >
                 <div className="md:w-full w-3/4  lg:w-1/3 flex justify-center">
                   <div className="text-left flex justify-center flex-col items-center">
@@ -114,6 +124,8 @@ function AdminDetailPengajuan() {
               <a
                 href={getUrlBase + dataPesanan.ktpDirektur}
                 className="md:w-full w-3/4  lg:w-1/3 flex justify-center md:mt-10"
+                target="_blank"
+                rel="noreferrer"
               >
                 <div className="md:w-full w-3/4  lg:w-1/3 flex justify-center">
                   <div className="text-left flex justify-center flex-col items-center">
@@ -133,6 +145,8 @@ function AdminDetailPengajuan() {
               <a
                 href={getUrlBase + dataPesanan.npwpPerusahaan}
                 className="md:w-full w-3/4  lg:w-1/3 flex justify-center md:mt-10"
+                target="_blank"
+                rel="noreferrer"
               >
                 <div className="md:w-full w-3/4  lg:w-1/3 flex justify-center">
                   <div className="text-left flex justify-center flex-col items-center">

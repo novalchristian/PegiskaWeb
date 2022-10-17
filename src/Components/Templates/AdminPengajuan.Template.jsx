@@ -7,6 +7,10 @@ import { urlBase } from "../../store";
 import { Link } from "react-router-dom";
 import moment from "moment";
 import localization from "moment/locale/id";
+import { 
+  // EditPesananButtonAtom, 
+  DetailPesananButtonAtom 
+} from "../Atoms";
 
 moment.updateLocale("id", localization);
 
@@ -135,16 +139,11 @@ export default function AdminPengajuanTemplate() {
                       <td className="py-2 px-6">{data.noWa}</td>
                       <td className="py-2 px-6">{data.namaPerusahaan}</td>
                       <td className="py-2 px-6 flex justify-center md:flex-row items-center">
-                        {/* BIKIN LINK TO HALAMAN EDIT */}
-                        <Link to={`/pesanan/edit/${data.id_pesanan}`}>
-                          <button className="py-2 bg-sky-600 hover:bg-sky-500 text-white rounded-lg px-4 ml-4 mt-4 md:mt-0">
-                            Edit
-                          </button>
-                        </Link>
+                        {/* <Link to={`/pesanan/edit/${data.id_pesanan}`}>
+                          <EditPesananButtonAtom />
+                        </Link> */}
                         <Link to={`/detail-pesanan/${data.id_pesanan}`}>
-                          <button className="p-2 bg-yellow-400 hover:bg-yellow-300 text-white rounded-lg ml-4 md:mt-0 mt-4">
-                            Detail
-                          </button>
+                          <DetailPesananButtonAtom />
                         </Link>
                       </td>
                     </tr>

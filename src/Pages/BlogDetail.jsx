@@ -1,14 +1,18 @@
 import React from "react";
-import { TitleLightMolecules } from "../Components/Molecules";
 import { useRecoilState } from "recoil";
 import { urlBase } from "../store";
 import axios from "axios";
 import { useParams } from "react-router-dom";
+import { DetailBlogTemplate } from "../Components/Templates";
 
 function BlogDetail() {
   const { id } = useParams();
   const [getUrlBase] = useRecoilState(urlBase);
   const [dataBlog, setDataBlog] = React.useState([]);
+
+  React.useLayoutEffect(() => {
+    window.scrollTo(0, 0);
+  });
 
   React.useEffect(() => {
     async function fetchDataBlogById() {
@@ -27,23 +31,7 @@ function BlogDetail() {
   return (
     <div className="flex justify-center items-center">
       <div className="md:pt-28 pt-20 pb-32 flex justify-center">
-        <div className="container">
-          <div className="w-full px-4">
-            <div className="mb-[-3rem] md:mb-[-3rem] mx-auto text-center max-w-5xl">
-              <TitleLightMolecules titleEng="Blog" titleInd={dataBlog.judul} />
-              <div className="flex justify-center items-center">
-                <img
-                  src={getUrlBase + dataBlog.blog}
-                  alt=""
-                  className="md:w-[600px] md:h-[300px] w-[300px] drop-shadow-xl rounded-xl"
-                />
-              </div>
-              <p className="pt-6 md:pl-6 indent-10 text-justify first-letter:text-4xl break-words leading-8 md:mx-0 mx-4 text-[14px] md:text-base">
-                {dataBlog.isi}
-              </p>
-            </div>
-          </div>
-        </div>
+        <DetailBlogTemplate judul={dataBlog.judul} blog={dataBlog.blog} isi={dataBlog.isi} />
       </div>
     </div>
   );

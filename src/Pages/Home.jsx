@@ -35,6 +35,9 @@ const company = [
 
 
 function Home({ data }) {
+  React.useLayoutEffect(() => {
+    window.scrollTo(0, 0);
+  });
   return (
     <>
       <HomeHeroTemplate

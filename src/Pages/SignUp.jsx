@@ -1,11 +1,10 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
-import { PegiskaLogoWhite } from "../Assets/Img";
 import { CorrectModals } from "../Components/Templates";
 import axios from "axios";
 import { useRecoilState } from "recoil";
 import { urlBase } from "../store";
 import { signUpForm } from "../Data/SignUpForm";
+import { PegiskaLogoButtonAtom, SubTitleButtonAtom } from "../Components/Atoms";
 
 function SignUp() {
   const [error, setError] = useState("");
@@ -16,6 +15,10 @@ function SignUp() {
     email: "",
     password: "",
     noTelp: "",
+  });
+
+  React.useLayoutEffect(() => {
+    window.scrollTo(0, 0);
   });
 
   async function authUser() {
@@ -55,15 +58,7 @@ function SignUp() {
   return (
     <div className="bg-login-cover bg-cover relative">
       <div className="w-screen h-screen flex justify-center items-center mx-auto">
-        <Link to="/">
-          <button>
-            <img
-              src={PegiskaLogoWhite}
-              alt="Logo Pegiska Putih"
-              className="absolute md:w-[300px] w-[350px] md:left-20 md:top-10 left-10 top-10"
-            />
-          </button>
-        </Link>
+        <PegiskaLogoButtonAtom />
         <div className="bg-white md:w-[450px] md:h-[620px] w-[350px] rounded-xl md:p-10 p-6 mt-4">
           <h1 className="md:text-2xl text-xl uppercase font-bold">Sign Up</h1>
           <div className="md:mt-10 mt-6">
@@ -99,22 +94,21 @@ function SignUp() {
               }}
             >
               <span className="absolute right-0 w-3 h-15 -mt-12 transition-all duration-1000 transform translate-x-12 bg-white opacity-10 rotate-12 group-hover:-translate-x-40 ease"></span>
-              <span className="relative md:text-[18px] text-md">Login</span>
+              <span className="relative md:text-[18px] text-md">Submit</span>
             </button>
             {openModal && (
               <CorrectModals
                 closeModal={setOpenModal}
                 title={"Selamat kamu berhasil mendaftar, waktunya login ya"}
-                buttonOne={"Okkay deh"}
+                buttonOne={"Baiklah"}
                 to={"/login"}
               />
             )}
-            <p className="text-center mt-4 text-grayText">
-              Already a user?{" "}
-              <Link to="/login">
-                <button className="hover:underline">SIGN IN</button>
-              </Link>
-            </p>
+            <SubTitleButtonAtom
+              title="Already a user? "
+              to="/login"
+              button="SIGN IN"
+            />
           </div>
         </div>
       </div>

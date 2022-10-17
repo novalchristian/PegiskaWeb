@@ -4,17 +4,11 @@ import { useRecoilState } from "recoil";
 import { urlBase } from "../../store";
 // import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
+import { DetailButtonAtom } from "../Atoms";
 
 function BlogItemMolecules(props) {
   const [getUrlBase] = useRecoilState(urlBase);
 
-  // const history = useNavigate();
-
-  // function handleSubmit(e, id) {
-  //   e.preventDefault();
-
-  //   history(`/detail-blog/${props.id}`);
-  // }
 
   return (
     <div
@@ -38,12 +32,7 @@ function BlogItemMolecules(props) {
           </div>
           <div className="mt-6">
             <Link to={`/blog/detail-blog/${props.id}`}>
-              <button className="relative rounded-full px-3 md:py-1.5 py-[3px] overflow-hidden group bg-primary hover:bg-gradient-to-r hover:from-primary hover:to-blue-500 text-white hover:ring-2 hover:ring-offset-2 hover:ring-blue-500 transition-all ease-out duration-300">
-                <span className="absolute right-0 w-3 h-15 -mt-12 transition-all duration-1000 transform translate-x-12 bg-white opacity-10 rotate-12 group-hover:-translate-x-40 ease"></span>
-                <span className="relative md:text-xs text-[8px]">
-                  Baca Selengkapnya
-                </span>
-              </button>
+              <DetailButtonAtom />
             </Link>
           </div>
         </div>

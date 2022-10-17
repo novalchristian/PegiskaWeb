@@ -7,6 +7,9 @@ import {
 
 function Pengajuan() {
   const data = JSON.parse(localStorage.getItem("dataPengguna"));
+  React.useLayoutEffect(() => {
+    window.scrollTo(0, 0);
+  });
   return (
     <>
       {data !== null ? (
