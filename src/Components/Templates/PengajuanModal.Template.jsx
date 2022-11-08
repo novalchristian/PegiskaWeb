@@ -41,7 +41,7 @@ function PengajuanModalTemplate() {
             </svg>
             <div className="flex justify-center">
               <p className="mb-5 text-lg font-normal text-gray-700 dark:text-gray-400 w-[400px] px-10">
-                Selamat Data Kamu Sudah Terekam oleh sistem, kamu akan dihubungi lebih lanjut, Terima Kasih
+                Selamat data kamu sudah terekam oleh sistem, kamu akan dihubungi lebih lanjut, Terima Kasih
               </p>
             </div>
             <button

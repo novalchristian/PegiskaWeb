@@ -2,7 +2,7 @@ import { atom } from "recoil";
 
 const urlBase = atom({
   key: "baseUrl",
-  default: "https://api.pegiska.my.id/",
+  default: "http://localhost:5000/api/",
 });
 
 const isUser = atom({

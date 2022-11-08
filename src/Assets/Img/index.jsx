@@ -27,6 +27,7 @@ import WellemSurentu from './WellemSurentu.png'
 import BennyLopulalan from './BennyLopulalan.png'
 import DellyLopulalan from './DellyLopulalan.png'
 import EmptyPerson from './emptyPerson.png'
+import Gladys from './Gladys.png'
 
 export {
   PegiskaLogo,
@@ -57,5 +58,6 @@ export {
   WellemSurentu,
   BennyLopulalan,
   DellyLopulalan,
-  EmptyPerson
+  EmptyPerson,
+  Gladys,
 };

@@ -1,4 +1,5 @@
-import React from "react";
+/* eslint-disable react-hooks/exhaustive-deps */
+import React, { useLayoutEffect, useState, useEffect } from "react";
 import {
   HomeHeroTemplate,
   BlogHomeTemplate,
@@ -8,34 +9,33 @@ import {
 } from "../Components/Templates";
 import {
   ContohSertifikat,
-  EkaMajuLogo,
-  MobiusLogo,
-  TristarLogo,
 } from "../Assets/Img";
 import { TitleLightMolecules } from "../Components/Molecules";
 import { gofData } from "../Data/GofData";
-
-const company = [
-  {
-    id: 1,
-    name: "Eka Maju",
-    img: EkaMajuLogo,
-  },
-  {
-    id: 2,
-    name: "Mobius",
-    img: MobiusLogo,
-  },
-  {
-    id: 3,
-    name: "Tristar",
-    img: TristarLogo,
-  },
-];
+import axios from "axios";
+import { useRecoilState } from "recoil";
+import { urlBase } from "../store";
 
 
 function Home({ data }) {
-  React.useLayoutEffect(() => {
+  const [getUrlBase] = useRecoilState(urlBase);
+  const [dataClient, setDataClient] = useState([]);
+
+  useEffect(() => {
+    async function fetchDataClient() {
+      const request = await axios
+        .get(getUrlBase + "client")
+        .then((res) => {
+          // console.log(res.data.result)
+          setDataClient(res.data.result);
+        })
+        .catch((er) => console.log("Error: ", er));
+      return request;
+    }
+    fetchDataClient();
+  }, []);
+
+  useLayoutEffect(() => {
     window.scrollTo(0, 0);
   });
   return (
@@ -87,7 +87,7 @@ function Home({ data }) {
         imgSertificationName="Sertifikat Pegiska Berkat Abadi"
       />
       {/* Exprience Work */}
-      <ExperienceTemplate company={company} />
+      <ExperienceTemplate company={dataClient} />
 
       {/* Blog */}
       <BlogHomeTemplate

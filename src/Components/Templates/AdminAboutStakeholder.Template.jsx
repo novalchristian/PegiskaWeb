@@ -3,8 +3,10 @@ import { EmptyPerson } from "../../Assets/Img";
 import { TitleLightMolecules } from "../Molecules";
 import { useRecoilState } from "recoil";
 import { urlBase } from "../../store";
+import { Link } from "react-router-dom";
+import { AddButtonAtom } from "../Atoms";
 
-export default function AboutStakeholderTemplate(props) {
+export default function AdminAboutStakeholderTemplate(props) {
   const [getUrlBase] = useRecoilState(urlBase);
   return (
     <div className="md:pt-12 pt-16 md:pb-10 flex justify-center bg-gray-50">
@@ -45,6 +47,11 @@ export default function AboutStakeholderTemplate(props) {
                   </div>
                 </div>
               ))}
+            </div>
+            <div className="flex justify-center items-center">
+              <Link to="/about/AddStakeholder">
+                <AddButtonAtom title="Tambahkan Stakeholder" />
+              </Link>
             </div>
           </div>
         </div>

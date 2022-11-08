@@ -4,7 +4,7 @@ import { BlogTemplate, AdminBlogTemplate } from "../Components/Templates";
 
 function Blog({ data }) {
   const dataAdmin = JSON.parse(localStorage.getItem("dataPengguna"));
-  const [isAdmin, setIsAdmin] = React.useState(false);
+  // const [isAdmin, setIsAdmin] = React.useState(false);
 
   React.useLayoutEffect(() => {
     window.scrollTo(0, 0);

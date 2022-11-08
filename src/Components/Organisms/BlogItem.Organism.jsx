@@ -2,7 +2,10 @@ import React from 'react'
 import { Link } from 'react-router-dom';
 import { useRecoilState } from "recoil";
 import { urlBase } from "../../store";
-import { DetailButtonAtom, EditButtonAtom } from '../Atoms';
+import { 
+  DetailButtonAtom, 
+  // EditButtonAtom 
+} from '../Atoms';
 
 export default function BlogItemOrganism(props) {
     const [getUrlBase] = useRecoilState(urlBase);
@@ -30,9 +33,9 @@ export default function BlogItemOrganism(props) {
             <Link to={`/blog/detail-blog/${props.id_blog}`}>
               <DetailButtonAtom />
             </Link>
-            <Link to={`/blog/edit-blog/${props.id_blog}`}>
+            {/* <Link to={`/blog/edit-blog/${props.id_blog}`}>
               <EditButtonAtom />
-            </Link>
+            </Link> */}
             <button
               type="button"
               className="flex justify-center text-gray-400 bg-red-500 hover:bg-red-600  rounded-3xl text-sm ml-auto py-1.5 px-2 items-center p-2"

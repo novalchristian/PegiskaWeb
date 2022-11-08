@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function AddBlogButtonAtom() {
+export default function AddButtonAtom(props) {
   return (
     <button className="flex justify-center items-center text-white bg-green-600 hover:bg-green-700 rounded-lg text-sm py-2 px-3 mt-6">
       <svg
@@ -15,7 +15,7 @@ export default function AddBlogButtonAtom() {
           clipRule="evenodd"
         />
       </svg>
-      <h1 className="pl-2">Tambahkan Blog</h1>
+      <h1 className="pl-2">{props.title}</h1>
     </button>
   );
 }

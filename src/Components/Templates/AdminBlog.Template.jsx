@@ -5,7 +5,7 @@ import { useRecoilState } from "recoil";
 import { urlBase } from "../../store";
 import axios from "axios";
 import { BlogItemOrganism } from "../Organisms";
-import { AddBlogButtonAtom } from "../Atoms";
+import { AddButtonAtom } from "../Atoms";
 
 function AdminBlogTemplate(props) {
   const [getUrlBase] = useRecoilState(urlBase);
@@ -43,7 +43,7 @@ function AdminBlogTemplate(props) {
               />
               <div className="flex justify-center items-center">
                 <Link to="/blog/AddBlog">
-                  <AddBlogButtonAtom />
+                  <AddButtonAtom title="Tambahkan Blog" />
                 </Link>
               </div>
             </div>

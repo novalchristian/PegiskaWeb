@@ -1,8 +1,10 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { useRecoilState } from "recoil";
 import { urlBase } from "../../store";
+import { AddButtonAtom } from "../Atoms";
 
-export default function AboutCompanyTemplate(props) {
+export default function AdminAboutCompanyTemplate(props) {
   const [getUrlBase] = useRecoilState(urlBase);
   return (
     <div className="md:pt-12 pt-4 md:pb-10 flex justify-center bg-gray-50">
@@ -29,6 +31,11 @@ export default function AboutCompanyTemplate(props) {
                   </div>
                 </div>
               ))}
+            </div>
+            <div className="flex justify-center items-center">
+              <Link to="/about/AddClient">
+                <AddButtonAtom title="Tambahkan Client" />
+              </Link>
             </div>
           </div>
         </div>

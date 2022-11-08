@@ -14,6 +14,8 @@ import {
   AdminEditBlog,
   AdminAddJasa,
   AdminEditJasa,
+  AdminAddClient,
+  AdminAddStakeholder,
 } from "./Pages";
 import NavbarLayout from "./Layout/NavbarLayout";
 import axios from "axios";
@@ -59,6 +61,8 @@ function App() {
         <Route element={<AdminAddBlog />} path="/blog/AddBlog" exact />
         {/* About */}
         <Route element={<AboutPage />} path="/about" />
+        <Route element={<AdminAddClient/>} path="/about/AddClient" />
+        <Route element={<AdminAddStakeholder/>} path="/about/AddStakeholder" />
         {/* Wrong URL */}
         {/* <Route path="*" element={<HomePage data={dataBlog} />} /> */}
       </Route>

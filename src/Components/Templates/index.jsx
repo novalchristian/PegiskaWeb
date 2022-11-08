@@ -24,8 +24,12 @@ import AboutStakeholderTemplate from "./AboutStakeholder.Template";
 import AboutLocationTemplate from "./AboutLocation.Template";
 import AboutCompanyTemplate from "./AboutCompany.Template";
 import AboutHeroTemplate from "./AboutHero.Template";
+import AdminAboutCompanyTemplate from "./AdminAboutCompany.Template";
+import AdminAboutStakeholderTemplate from "./AdminAboutStakeholder.Template";
 
 export {
+  AdminAboutStakeholderTemplate,
+  AdminAboutCompanyTemplate,
   AboutHeroTemplate,
   AboutCompanyTemplate,
   AboutLocationTemplate,

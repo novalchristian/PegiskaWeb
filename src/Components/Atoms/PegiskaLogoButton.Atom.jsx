@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom';
 import { PegiskaLogoWhite } from '../../Assets/Img';
 
+
 export default function PegiskaLogoButtonAtom() {
   return (
     <Link to="/">

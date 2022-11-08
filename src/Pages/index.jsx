@@ -12,8 +12,12 @@ import AdminDetailPengajuan from "./AdminDetailPengajuan";
 import AdminEditBlog from "./AdminEditBlog";
 import AdminAddJasa from "./AdminAddJasa";
 import AdminEditJasa from "./AdminEditJasa";
+import AdminAddClient from "./AdminAddClient";
+import AdminAddStakeholder from "./AdminAddStakholder";
 
 export {
+  AdminAddStakeholder,
+  AdminAddClient,
   AdminEditJasa,
   AdminAddJasa,
   AdminEditBlog,
